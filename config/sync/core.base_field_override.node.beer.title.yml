@@ -1,0 +1,18 @@
+uuid: dec0e8c4-59e0-4515-998c-8e9f17560cda
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.beer
+id: node.beer.title
+field_name: title
+entity_type: node
+bundle: beer
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

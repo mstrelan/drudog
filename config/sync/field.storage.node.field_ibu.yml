@@ -1,0 +1,20 @@
+uuid: 16b0d02d-a5d7-43c9-9753-60853cd5c9b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_ibu
+field_name: field_ibu
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 1
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

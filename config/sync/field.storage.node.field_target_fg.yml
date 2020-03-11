@@ -1,0 +1,20 @@
+uuid: f0018c18-e9b4-46cc-87b2-f2b23edb7772
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_target_fg
+field_name: field_target_fg
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 1
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 9036f4f2-a975-4761-b0f0-681cb8ee4113
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ebc
+    - node.type.beer
+id: node.beer.field_ebc
+field_name: field_ebc
+entity_type: node
+bundle: beer
+label: EBC
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

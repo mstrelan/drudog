@@ -1,0 +1,22 @@
+uuid: fbdd81c6-ec48-4bf4-86f4-798b00bf2462
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.beer
+id: node.beer.promote
+field_name: promote
+entity_type: node
+bundle: beer
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

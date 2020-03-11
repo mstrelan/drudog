@@ -1,0 +1,191 @@
+uuid: f2b404be-0252-4087-9bd7-6a93ae748b14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.beer.field_abv
+    - field.field.node.beer.field_attenuation_level
+    - field.field.node.beer.field_brewers_tips
+    - field.field.node.beer.field_description
+    - field.field.node.beer.field_ebc
+    - field.field.node.beer.field_first_brewed
+    - field.field.node.beer.field_food_pairing
+    - field.field.node.beer.field_ibu
+    - field.field.node.beer.field_id
+    - field.field.node.beer.field_image_url
+    - field.field.node.beer.field_ph
+    - field.field.node.beer.field_srm
+    - field.field.node.beer.field_tagline
+    - field.field.node.beer.field_target_fg
+    - field.field.node.beer.field_target_og
+    - node.type.beer
+  module:
+    - datetime
+    - link
+    - path
+id: node.beer.default
+targetEntityType: node
+bundle: beer
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_abv:
+    weight: 126
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_attenuation_level:
+    weight: 133
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_brewers_tips:
+    weight: 135
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_description:
+    weight: 124
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_ebc:
+    weight: 130
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_first_brewed:
+    weight: 123
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_food_pairing:
+    weight: 134
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ibu:
+    weight: 127
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_id:
+    weight: 121
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_image_url:
+    weight: 125
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_ph:
+    weight: 132
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_srm:
+    weight: 131
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_tagline:
+    weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_target_fg:
+    weight: 128
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_target_og:
+    weight: 129
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

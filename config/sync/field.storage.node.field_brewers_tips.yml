@@ -1,0 +1,19 @@
+uuid: 8f4793b4-83f7-40f2-91a4-407e823c13a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_brewers_tips
+field_name: field_brewers_tips
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

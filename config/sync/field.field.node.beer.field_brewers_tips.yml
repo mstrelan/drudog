@@ -1,0 +1,19 @@
+uuid: 86931846-8080-48dd-b251-9e98433037ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_brewers_tips
+    - node.type.beer
+id: node.beer.field_brewers_tips
+field_name: field_brewers_tips
+entity_type: node
+bundle: beer
+label: 'Brewer''s tips'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

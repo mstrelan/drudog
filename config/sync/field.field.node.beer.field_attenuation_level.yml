@@ -1,0 +1,23 @@
+uuid: 7310490e-c409-4c97-9bd1-88f7d088cef5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attenuation_level
+    - node.type.beer
+id: node.beer.field_attenuation_level
+field_name: field_attenuation_level
+entity_type: node
+bundle: beer
+label: 'Attenuation level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: !!float 100
+  prefix: ''
+  suffix: '%'
+field_type: decimal

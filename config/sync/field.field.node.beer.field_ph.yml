@@ -1,0 +1,23 @@
+uuid: dec0dc6c-6fc6-44f2-9ff7-1de49647d5a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ph
+    - node.type.beer
+id: node.beer.field_ph
+field_name: field_ph
+entity_type: node
+bundle: beer
+label: pH
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: !!float 14
+  prefix: ''
+  suffix: ''
+field_type: decimal

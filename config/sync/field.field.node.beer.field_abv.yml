@@ -1,0 +1,23 @@
+uuid: 0fda0864-522a-4c8c-bb32-d98b8aeb4304
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_abv
+    - node.type.beer
+id: node.beer.field_abv
+field_name: field_abv
+entity_type: node
+bundle: beer
+label: ABV
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: !!float 100
+  prefix: ''
+  suffix: '%'
+field_type: decimal

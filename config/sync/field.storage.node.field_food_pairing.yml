@@ -1,0 +1,21 @@
+uuid: e23ff8d4-c150-412d-ade5-31de9418f9b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_food_pairing
+field_name: field_food_pairing
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

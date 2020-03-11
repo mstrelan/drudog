@@ -1,0 +1,50 @@
+uuid: 2aca602d-e127-4d87-a8d7-4eaed6047967
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.beer.field_abv
+    - field.field.node.beer.field_attenuation_level
+    - field.field.node.beer.field_brewers_tips
+    - field.field.node.beer.field_description
+    - field.field.node.beer.field_ebc
+    - field.field.node.beer.field_first_brewed
+    - field.field.node.beer.field_food_pairing
+    - field.field.node.beer.field_ibu
+    - field.field.node.beer.field_id
+    - field.field.node.beer.field_image_url
+    - field.field.node.beer.field_ph
+    - field.field.node.beer.field_srm
+    - field.field.node.beer.field_tagline
+    - field.field.node.beer.field_target_fg
+    - field.field.node.beer.field_target_og
+    - node.type.beer
+  module:
+    - user
+id: node.beer.teaser
+targetEntityType: node
+bundle: beer
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_abv: true
+  field_attenuation_level: true
+  field_brewers_tips: true
+  field_description: true
+  field_ebc: true
+  field_first_brewed: true
+  field_food_pairing: true
+  field_ibu: true
+  field_id: true
+  field_image_url: true
+  field_ph: true
+  field_srm: true
+  field_tagline: true
+  field_target_fg: true
+  field_target_og: true

@@ -1,0 +1,184 @@
+uuid: 70568155-7b7c-47be-bc7d-4b218b91af72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.beer.field_abv
+    - field.field.node.beer.field_attenuation_level
+    - field.field.node.beer.field_brewers_tips
+    - field.field.node.beer.field_description
+    - field.field.node.beer.field_ebc
+    - field.field.node.beer.field_first_brewed
+    - field.field.node.beer.field_food_pairing
+    - field.field.node.beer.field_ibu
+    - field.field.node.beer.field_id
+    - field.field.node.beer.field_image_url
+    - field.field.node.beer.field_ph
+    - field.field.node.beer.field_srm
+    - field.field.node.beer.field_tagline
+    - field.field.node.beer.field_target_fg
+    - field.field.node.beer.field_target_og
+    - node.type.beer
+  module:
+    - datetime
+    - link
+    - user
+id: node.beer.default
+targetEntityType: node
+bundle: beer
+mode: default
+content:
+  field_abv:
+    weight: 106
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_attenuation_level:
+    weight: 113
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_brewers_tips:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_description:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_ebc:
+    weight: 110
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_first_brewed:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_food_pairing:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ibu:
+    weight: 107
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_id:
+    weight: 101
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_image_url:
+    weight: 105
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_ph:
+    weight: 112
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_srm:
+    weight: 111
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_tagline:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_target_fg:
+    weight: 108
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_target_og:
+    weight: 109
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

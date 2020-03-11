@@ -1,0 +1,23 @@
+uuid: ceada1fc-4ebf-454b-9c38-026bb95a22ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_id
+    - node.type.beer
+id: node.beer.field_id
+field_name: field_id
+entity_type: node
+bundle: beer
+label: ID
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
