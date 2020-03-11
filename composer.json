@@ -15,6 +15,8 @@
         "drupal/console": "^1.0.2",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
+        "drupal/migrate_plus": "^4.2",
+        "drupal/migrate_tools": "^4.5",
         "drush/drush": "^9.7.1 | ^10.0.0",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
