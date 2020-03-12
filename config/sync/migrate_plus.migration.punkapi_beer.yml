@@ -1,0 +1,120 @@
+id: punkapi_beer
+label: PunkAPI Beers
+migration_group: punkapi
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls:
+    - 'https://api.punkapi.com/v2/beers?page=1&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=2&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=3&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=4&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=5&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=6&per_page=50'
+    # TODO: When setting the below to 25 per page the import stops at 300 not 325.
+    - 'https://api.punkapi.com/v2/beers?page=7&per_page=50'
+  item_selector: NULL
+  fields:
+    # TODO: Do we have to specify all of this if name matches selector?
+    -
+      name: id
+      label: 'ID'
+      selector: id
+    -
+      name: name
+      label: 'Name'
+      selector: name
+    -
+      name: tagline
+      label: 'Tagline'
+      selector: tagline
+    -
+      name: first_brewed
+      label: 'First Brewed'
+      selector: first_brewed
+    -
+      name: description
+      label: 'Description'
+      selector: description
+    -
+      name: image_url
+      label: 'Image URL'
+      selector: image_url
+    -
+      name: abv
+      label: 'ABV'
+      selector: abv
+    -
+      name: ibu
+      label: 'IBU'
+      selector: ibu
+    -
+      name: target_fg
+      label: 'Target FG'
+      selector: target_fg
+    -
+      name: target_og
+      label: 'Target OG'
+      selector: target_og
+    -
+      name: ebc
+      label: 'EBC'
+      selector: ebv
+    -
+      name: srm
+      label: 'SRM'
+      selector: srm
+    -
+      name: ph
+      label: 'pH'
+      selector: ph
+    -
+      name: attenuation_level
+      label: 'Attenuation Level'
+      selector: attenuation_level
+    # TODO: Compound fields
+    -
+      name: food_pairing
+      label: 'Food Pairing'
+      selector: food_pairing
+    -
+      name: brewers_tips
+      label: 'Brewers tips'
+      selector: brewers_tips
+
+  ids:
+    id:
+      type: integer
+process:
+  type:
+    plugin: default_value
+    default_value: beer
+  field_id: id
+  title: name
+  field_tagline: tagline
+  # TODO: Date parsing
+  # field_first_brewed: first_brewed
+  field_description: description
+  'field_image_url/uri': image_url
+  field_abv: abv
+  field_ibu: ibu
+  field_target_fg: target_fg
+  field_target_og: target_og
+  # TODO: Debug why this is empty
+  # field_ebc: ebc
+  field_srm: srm
+  field_ph: ph
+  field_attenuation_level: attenuation_level
+  # TODO: Compound fields
+  field_food_pairing: food_pairing
+  field_brewers_tips: brewers_tips
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:node'
+migration_dependencies: {  }
