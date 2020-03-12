@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.beer.field_abv
     - field.field.node.beer.field_attenuation_level
+    - field.field.node.beer.field_boil_volume
     - field.field.node.beer.field_brewers_tips
     - field.field.node.beer.field_description
     - field.field.node.beer.field_ebc
@@ -19,6 +20,7 @@ dependencies:
     - field.field.node.beer.field_tagline
     - field.field.node.beer.field_target_fg
     - field.field.node.beer.field_target_og
+    - field.field.node.beer.field_volume
     - node.type.beer
   module:
     - user
@@ -35,6 +37,7 @@ content:
 hidden:
   field_abv: true
   field_attenuation_level: true
+  field_boil_volume: true
   field_brewers_tips: true
   field_description: true
   field_ebc: true
@@ -48,3 +51,4 @@ hidden:
   field_tagline: true
   field_target_fg: true
   field_target_og: true
+  field_volume: true

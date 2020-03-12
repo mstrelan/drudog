@@ -1,0 +1,20 @@
+uuid: bb5653a4-b3c6-4abc-bf64-6e33c658bb4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - physical
+id: node.field_volume
+field_name: field_volume
+entity_type: node
+type: physical_measurement
+settings:
+  measurement_type: volume
+module: physical
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

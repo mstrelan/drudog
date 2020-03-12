@@ -1,0 +1,21 @@
+uuid: e25091f9-a098-4f74-92ba-c66c0ec2cf2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_volume
+    - node.type.beer
+  module:
+    - physical
+id: node.beer.field_volume
+field_name: field_volume
+entity_type: node
+bundle: beer
+label: Volume
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: physical_measurement
