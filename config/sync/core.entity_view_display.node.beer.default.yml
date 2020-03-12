@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.beer.field_abv
     - field.field.node.beer.field_attenuation_level
+    - field.field.node.beer.field_boil_volume
     - field.field.node.beer.field_brewers_tips
     - field.field.node.beer.field_description
     - field.field.node.beer.field_ebc
@@ -18,10 +19,12 @@ dependencies:
     - field.field.node.beer.field_tagline
     - field.field.node.beer.field_target_fg
     - field.field.node.beer.field_target_og
+    - field.field.node.beer.field_volume
     - node.type.beer
   module:
     - datetime
     - link
+    - physical
     - user
 id: node.beer.default
 targetEntityType: node
@@ -29,7 +32,7 @@ bundle: beer
 mode: default
 content:
   field_abv:
-    weight: 106
+    weight: 6
     label: above
     settings:
       thousand_separator: ''
@@ -40,7 +43,7 @@ content:
     type: number_decimal
     region: content
   field_attenuation_level:
-    weight: 113
+    weight: 13
     label: above
     settings:
       thousand_separator: ''
@@ -50,22 +53,29 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
+  field_boil_volume:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: physical_measurement_default
+    region: content
   field_brewers_tips:
-    weight: 115
+    weight: 17
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_description:
-    weight: 104
+    weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_ebc:
-    weight: 110
+    weight: 10
     label: above
     settings:
       thousand_separator: ''
@@ -76,7 +86,7 @@ content:
     type: number_decimal
     region: content
   field_first_brewed:
-    weight: 103
+    weight: 3
     label: above
     settings:
       format_type: medium
@@ -85,7 +95,7 @@ content:
     type: datetime_default
     region: content
   field_food_pairing:
-    weight: 114
+    weight: 16
     label: above
     settings:
       link_to_entity: false
@@ -93,7 +103,7 @@ content:
     type: string
     region: content
   field_ibu:
-    weight: 107
+    weight: 7
     label: above
     settings:
       thousand_separator: ''
@@ -104,7 +114,7 @@ content:
     type: number_decimal
     region: content
   field_id:
-    weight: 101
+    weight: 1
     label: above
     settings:
       thousand_separator: ''
@@ -113,7 +123,7 @@ content:
     type: number_integer
     region: content
   field_image_url:
-    weight: 105
+    weight: 5
     label: above
     settings:
       trim_length: 80
@@ -125,7 +135,7 @@ content:
     type: link
     region: content
   field_ph:
-    weight: 112
+    weight: 12
     label: above
     settings:
       thousand_separator: ''
@@ -136,7 +146,7 @@ content:
     type: number_decimal
     region: content
   field_srm:
-    weight: 111
+    weight: 11
     label: above
     settings:
       thousand_separator: ''
@@ -147,7 +157,7 @@ content:
     type: number_decimal
     region: content
   field_tagline:
-    weight: 102
+    weight: 2
     label: above
     settings:
       link_to_entity: false
@@ -155,7 +165,7 @@ content:
     type: string
     region: content
   field_target_fg:
-    weight: 108
+    weight: 8
     label: above
     settings:
       thousand_separator: ''
@@ -166,7 +176,7 @@ content:
     type: number_decimal
     region: content
   field_target_og:
-    weight: 109
+    weight: 9
     label: above
     settings:
       thousand_separator: ''
@@ -176,9 +186,16 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
-  links:
-    weight: 100
+  field_volume:
+    weight: 15
+    label: above
     settings: {  }
     third_party_settings: {  }
+    type: physical_measurement_default
     region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

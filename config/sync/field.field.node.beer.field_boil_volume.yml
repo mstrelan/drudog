@@ -1,0 +1,21 @@
+uuid: 56972c5d-ebd5-47a2-aa41-60885c53b35d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_boil_volume
+    - node.type.beer
+  module:
+    - physical
+id: node.beer.field_boil_volume
+field_name: field_boil_volume
+entity_type: node
+bundle: beer
+label: 'Boil Volume'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: physical_measurement
