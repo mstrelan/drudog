@@ -1,0 +1,21 @@
+uuid: 0d14c386-3c62-4f98-9484-c4d69d3de6ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_temp
+    - paragraphs.paragraphs_type.mash_temp
+  module:
+    - physical
+id: paragraph.mash_temp.field_temp
+field_name: field_temp
+entity_type: paragraph
+bundle: mash_temp
+label: Temperature
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: physical_measurement

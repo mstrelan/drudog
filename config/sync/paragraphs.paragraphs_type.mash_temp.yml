@@ -1,0 +1,10 @@
+uuid: c25b3ed6-2f55-4c1e-be74-8916175824f9
+langcode: en
+status: true
+dependencies: {  }
+id: mash_temp
+label: 'Mash temp'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

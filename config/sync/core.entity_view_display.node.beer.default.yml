@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.beer.field_id
     - field.field.node.beer.field_image_url
     - field.field.node.beer.field_malt
+    - field.field.node.beer.field_mash_temp
     - field.field.node.beer.field_ph
     - field.field.node.beer.field_srm
     - field.field.node.beer.field_tagline
@@ -150,6 +151,15 @@ content:
   field_malt:
     type: entity_reference_revisions_entity_view
     weight: 18
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_mash_temp:
+    type: entity_reference_revisions_entity_view
+    weight: 21
     label: above
     settings:
       view_mode: default
