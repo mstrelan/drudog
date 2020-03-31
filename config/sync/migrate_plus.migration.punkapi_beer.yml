@@ -102,9 +102,6 @@ source:
   ids:
     id:
       type: integer
-  constants:
-    units_search: ['litres', 'grams', 'kilograms', 'celcius']
-    units_replace: ['l', 'g', 'kg', 'c']
 process:
   type:
     plugin: default_value
@@ -129,14 +126,14 @@ process:
   'field_volume/unit':
     plugin: str_replace
     source: volume_unit
-    search: constants/units_search
-    replace: constants/units_replace
+    search: litres
+    replace: l
   'field_boil_volume/number': boil_volume_value
   'field_boil_volume/unit':
     plugin: str_replace
     source: boil_volume_unit
-    search: constants/units_search
-    replace: constants/units_replace
+    search: litres
+    replace: l
   # TODO: Compound fields
   field_food_pairing: food_pairing
   field_brewers_tips: brewers_tips
