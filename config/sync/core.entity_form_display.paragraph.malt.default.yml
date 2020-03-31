@@ -1,0 +1,36 @@
+uuid: c78b359c-94e8-46bd-af4f-c11116d8203a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.malt.field_amount
+    - field.field.paragraph.malt.field_malt
+    - paragraphs.paragraphs_type.malt
+  module:
+    - physical
+id: paragraph.malt.default
+targetEntityType: paragraph
+bundle: malt
+mode: default
+content:
+  field_amount:
+    weight: 1
+    settings:
+      default_unit: ''
+      allow_unit_change: true
+    third_party_settings: {  }
+    type: physical_measurement_default
+    region: content
+  field_malt:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

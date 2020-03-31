@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
     - field.field.node.beer.field_image_url
+    - field.field.node.beer.field_malt
     - field.field.node.beer.field_ph
     - field.field.node.beer.field_srm
     - field.field.node.beer.field_tagline
@@ -23,6 +24,7 @@ dependencies:
     - node.type.beer
   module:
     - datetime
+    - entity_reference_revisions
     - link
     - physical
     - user
@@ -133,6 +135,15 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
+  field_malt:
+    type: entity_reference_revisions_entity_view
+    weight: 18
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_ph:
     weight: 12

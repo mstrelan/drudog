@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
     - field.field.node.beer.field_image_url
+    - field.field.node.beer.field_malt
     - field.field.node.beer.field_ph
     - field.field.node.beer.field_srm
     - field.field.node.beer.field_tagline
@@ -24,6 +25,7 @@ dependencies:
   module:
     - datetime
     - link
+    - paragraphs
     - path
     - physical
 id: node.beer.default
@@ -60,7 +62,7 @@ content:
     type: physical_measurement_default
     region: content
   field_brewers_tips:
-    weight: 23
+    weight: 24
     settings:
       rows: 5
       placeholder: ''
@@ -89,7 +91,7 @@ content:
     type: datetime_default
     region: content
   field_food_pairing:
-    weight: 22
+    weight: 23
     settings:
       size: 60
       placeholder: ''
@@ -117,6 +119,18 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_malt:
+    type: entity_reference_paragraphs
+    weight: 22
+    settings:
+      title: Malt
+      title_plural: Malts
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: malt
+    third_party_settings: {  }
     region: content
   field_ph:
     weight: 18
