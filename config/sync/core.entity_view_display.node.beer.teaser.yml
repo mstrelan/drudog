@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
     - field.field.node.beer.field_image_url
+    - field.field.node.beer.field_malt
     - field.field.node.beer.field_ph
     - field.field.node.beer.field_srm
     - field.field.node.beer.field_tagline
@@ -46,6 +47,7 @@ hidden:
   field_ibu: true
   field_id: true
   field_image_url: true
+  field_malt: true
   field_ph: true
   field_srm: true
   field_tagline: true
