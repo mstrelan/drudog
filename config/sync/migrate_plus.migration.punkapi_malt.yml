@@ -1,0 +1,50 @@
+id: punkapi_malt
+label: 'PunkAPI Malts'
+migration_group: punkapi
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: xml
+  urls:
+    - '../punkapi.xml'
+  item_selector: /root/row/ingredients/malt
+  fields:
+    -
+      name: beer_id
+      label: 'Beer ID'
+      selector: ../../id
+    -
+      name: malt
+      label: Malt
+      selector: name
+    -
+      name: amount_value
+      label: 'Amount (value)'
+      selector: amount/value
+    -
+      name: amount_unit
+      label: 'Amount (unit)'
+      selector: amount/unit
+  ids:
+    beer_id:
+      type: integer
+    malt:
+      type: string
+process:
+  field_malt:
+    plugin: entity_generate
+    source: malt
+    value_key: name
+    bundle_key: vid
+    bundle: malt
+    entity_type: taxonomy_term
+  field_amount/number: amount_value
+  field_amount/unit:
+    plugin: str_replace
+    source: amount_unit
+    search: kilograms
+    replace: kg
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: malt
+migration_dependencies: {  }

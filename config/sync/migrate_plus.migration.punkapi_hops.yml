@@ -1,0 +1,64 @@
+id: punkapi_hops
+label: 'PunkAPI Hops'
+migration_group: punkapi
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: xml
+  urls:
+    - '../punkapi.xml'
+  item_selector: /root/row/ingredients/hops
+  fields:
+    -
+      name: beer_id
+      label: 'Beer ID'
+      selector: ../../id
+    -
+      name: hops
+      label: Hops
+      selector: name
+    -
+      name: amount_value
+      label: 'Amount (value)'
+      selector: amount/value
+    -
+      name: amount_unit
+      label: 'Amount (unit)'
+      selector: amount/unit
+    -
+      name: add
+      label: 'Add'
+      selector: add
+    -
+      name: attribute
+      label: 'Attribute'
+      selector: attribute
+  ids:
+    beer_id:
+      type: integer
+    hops:
+      type: string
+    add:
+      type: string
+    attribute:
+      type: string
+process:
+  field_hops:
+    plugin: entity_generate
+    source: hops
+    value_key: name
+    bundle_key: vid
+    bundle: hops
+    entity_type: taxonomy_term
+  field_amount/number: amount_value
+  field_amount/unit:
+    plugin: str_replace
+    source: amount_unit
+    search: grams
+    replace: g
+  field_add: add
+  field_attribute: attribute
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: hops
+migration_dependencies: {  }

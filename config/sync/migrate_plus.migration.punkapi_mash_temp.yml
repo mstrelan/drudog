@@ -1,0 +1,44 @@
+id: punkapi_mash_temp
+label: 'PunkAPI Mash Temp'
+migration_group: punkapi
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: xml
+  urls:
+    - ../punkapi.xml
+  item_selector: /root/row/method/mash_temp
+  fields:
+    -
+      name: beer_id
+      label: 'Beer ID'
+      selector: ../../id
+    -
+      name: temp_value
+      label: Temp (value)
+      selector: temp/value
+    -
+      name: temp_unit
+      label: Temp (unit)
+      selector: temp/unit
+    -
+      name: duration
+      label: 'Duration'
+      selector: duration
+  ids:
+    beer_id:
+      type: integer
+    temp_value:
+      type: integer
+process:
+  field_temp/number: temp_value
+  field_temp/unit:
+    plugin: str_replace
+    source: temp_unit
+    search: celsius
+    replace: C
+  field_duration: duration
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: mash_temp
+migration_dependencies: {  }
