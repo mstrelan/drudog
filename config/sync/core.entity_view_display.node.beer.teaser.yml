@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.beer.field_target_fg
     - field.field.node.beer.field_target_og
     - field.field.node.beer.field_volume
+    - field.field.node.beer.field_yeast
     - node.type.beer
   module:
     - user
@@ -56,3 +57,4 @@ hidden:
   field_target_fg: true
   field_target_og: true
   field_volume: true
+  field_yeast: true
