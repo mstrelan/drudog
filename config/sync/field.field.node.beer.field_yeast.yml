@@ -1,0 +1,29 @@
+uuid: 13481ce9-1b4c-4c87-ab72-2e13cf767a59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yeast
+    - node.type.beer
+    - taxonomy.vocabulary.yeast
+id: node.beer.field_yeast
+field_name: field_yeast
+entity_type: node
+bundle: beer
+label: Yeast
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      yeast: yeast
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.beer.field_target_fg
     - field.field.node.beer.field_target_og
     - field.field.node.beer.field_volume
+    - field.field.node.beer.field_yeast
     - node.type.beer
   module:
     - datetime
@@ -213,6 +214,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: physical_measurement_default
+    region: content
+  field_yeast:
+    weight: 20
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 0
