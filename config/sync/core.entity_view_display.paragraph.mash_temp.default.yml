@@ -1,0 +1,32 @@
+uuid: 161dd0f9-6a27-466d-9ff2-96b08b607640
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.mash_temp.field_duration
+    - field.field.paragraph.mash_temp.field_temp
+    - paragraphs.paragraphs_type.mash_temp
+  module:
+    - physical
+id: paragraph.mash_temp.default
+targetEntityType: paragraph
+bundle: mash_temp
+mode: default
+content:
+  field_duration:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_temp:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: physical_measurement_default
+    region: content
+hidden: {  }

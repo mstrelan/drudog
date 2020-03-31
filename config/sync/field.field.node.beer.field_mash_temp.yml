@@ -1,0 +1,37 @@
+uuid: 263fce90-1adc-435e-806b-23e9dea71f25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mash_temp
+    - node.type.beer
+    - paragraphs.paragraphs_type.mash_temp
+  module:
+    - entity_reference_revisions
+id: node.beer.field_mash_temp
+field_name: field_mash_temp
+entity_type: node
+bundle: beer
+label: 'Mash temp'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      mash_temp: mash_temp
+    target_bundles_drag_drop:
+      hops:
+        weight: 4
+        enabled: false
+      malt:
+        weight: 5
+        enabled: false
+      mash_temp:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

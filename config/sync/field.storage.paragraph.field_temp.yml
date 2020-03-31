@@ -1,0 +1,20 @@
+uuid: 41e5fb49-4f4e-4179-b48e-810314c28de2
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - physical
+id: paragraph.field_temp
+field_name: field_temp
+entity_type: paragraph
+type: physical_measurement
+settings:
+  measurement_type: temperature
+module: physical
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 935d5b63-46b0-430d-adef-8a4e451a2023
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_duration
+    - paragraphs.paragraphs_type.mash_temp
+id: paragraph.mash_temp.field_duration
+field_name: field_duration
+entity_type: paragraph
+bundle: mash_temp
+label: Duration
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: min
+field_type: integer
