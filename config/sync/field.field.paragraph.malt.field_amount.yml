@@ -1,0 +1,21 @@
+uuid: 6b775e60-a6b3-4f78-96b4-de5cec491de6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_amount
+    - paragraphs.paragraphs_type.malt
+  module:
+    - physical
+id: paragraph.malt.field_amount
+field_name: field_amount
+entity_type: paragraph
+bundle: malt
+label: Amount
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: physical_measurement

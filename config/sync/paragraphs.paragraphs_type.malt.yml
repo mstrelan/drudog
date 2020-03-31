@@ -1,0 +1,10 @@
+uuid: f860f137-8f63-4302-8637-bcb2f60486e9
+langcode: en
+status: true
+dependencies: {  }
+id: malt
+label: Malt
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

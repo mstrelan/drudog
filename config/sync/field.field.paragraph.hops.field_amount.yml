@@ -1,0 +1,21 @@
+uuid: 8067f3c0-2cbc-4717-af39-2ff082f4f5a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_amount
+    - paragraphs.paragraphs_type.hops
+  module:
+    - physical
+id: paragraph.hops.field_amount
+field_name: field_amount
+entity_type: paragraph
+bundle: hops
+label: Amount
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: physical_measurement

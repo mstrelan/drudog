@@ -10,17 +10,22 @@ dependencies:
     - field.field.node.beer.field_brewers_tips
     - field.field.node.beer.field_description
     - field.field.node.beer.field_ebc
+    - field.field.node.beer.field_fermentation_temp
     - field.field.node.beer.field_first_brewed
     - field.field.node.beer.field_food_pairing
+    - field.field.node.beer.field_hops
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
     - field.field.node.beer.field_image_url
+    - field.field.node.beer.field_malt
+    - field.field.node.beer.field_mash_temp
     - field.field.node.beer.field_ph
     - field.field.node.beer.field_srm
     - field.field.node.beer.field_tagline
     - field.field.node.beer.field_target_fg
     - field.field.node.beer.field_target_og
     - field.field.node.beer.field_volume
+    - field.field.node.beer.field_yeast
     - node.type.beer
   module:
     - user
@@ -41,14 +46,19 @@ hidden:
   field_brewers_tips: true
   field_description: true
   field_ebc: true
+  field_fermentation_temp: true
   field_first_brewed: true
   field_food_pairing: true
+  field_hops: true
   field_ibu: true
   field_id: true
   field_image_url: true
+  field_malt: true
+  field_mash_temp: true
   field_ph: true
   field_srm: true
   field_tagline: true
   field_target_fg: true
   field_target_og: true
   field_volume: true
+  field_yeast: true

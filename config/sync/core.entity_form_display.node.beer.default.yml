@@ -9,21 +9,27 @@ dependencies:
     - field.field.node.beer.field_brewers_tips
     - field.field.node.beer.field_description
     - field.field.node.beer.field_ebc
+    - field.field.node.beer.field_fermentation_temp
     - field.field.node.beer.field_first_brewed
     - field.field.node.beer.field_food_pairing
+    - field.field.node.beer.field_hops
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
     - field.field.node.beer.field_image_url
+    - field.field.node.beer.field_malt
+    - field.field.node.beer.field_mash_temp
     - field.field.node.beer.field_ph
     - field.field.node.beer.field_srm
     - field.field.node.beer.field_tagline
     - field.field.node.beer.field_target_fg
     - field.field.node.beer.field_target_og
     - field.field.node.beer.field_volume
+    - field.field.node.beer.field_yeast
     - node.type.beer
   module:
     - datetime
     - link
+    - paragraphs
     - path
     - physical
 id: node.beer.default
@@ -60,7 +66,7 @@ content:
     type: physical_measurement_default
     region: content
   field_brewers_tips:
-    weight: 23
+    weight: 28
     settings:
       rows: 5
       placeholder: ''
@@ -82,6 +88,14 @@ content:
     third_party_settings: {  }
     type: number
     region: content
+  field_fermentation_temp:
+    weight: 23
+    settings:
+      default_unit: ''
+      allow_unit_change: true
+    third_party_settings: {  }
+    type: physical_measurement_default
+    region: content
   field_first_brewed:
     weight: 9
     settings: {  }
@@ -89,12 +103,24 @@ content:
     type: datetime_default
     region: content
   field_food_pairing:
-    weight: 22
+    weight: 27
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_hops:
+    type: entity_reference_paragraphs
+    weight: 25
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_ibu:
     weight: 13
@@ -117,6 +143,30 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_malt:
+    type: entity_reference_paragraphs
+    weight: 24
+    settings:
+      title: Malt
+      title_plural: Malts
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: malt
+    third_party_settings: {  }
+    region: content
+  field_mash_temp:
+    type: entity_reference_paragraphs
+    weight: 22
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_ph:
     weight: 18
@@ -161,6 +211,16 @@ content:
       allow_unit_change: true
     third_party_settings: {  }
     type: physical_measurement_default
+    region: content
+  field_yeast:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   path:
     type: path

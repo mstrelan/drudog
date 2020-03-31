@@ -1,0 +1,31 @@
+uuid: a52f4e01-5b03-4697-ad92-375156fe6b1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_malt
+    - node.type.beer
+    - paragraphs.paragraphs_type.malt
+  module:
+    - entity_reference_revisions
+id: node.beer.field_malt
+field_name: field_malt
+entity_type: node
+bundle: beer
+label: Malt
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      malt: malt
+    target_bundles_drag_drop:
+      malt:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

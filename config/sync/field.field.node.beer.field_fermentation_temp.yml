@@ -1,0 +1,21 @@
+uuid: 649316bf-b952-4b58-bab6-9fe9d3c977e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fermentation_temp
+    - node.type.beer
+  module:
+    - physical
+id: node.beer.field_fermentation_temp
+field_name: field_fermentation_temp
+entity_type: node
+bundle: beer
+label: 'Fermentation temp'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: physical_measurement

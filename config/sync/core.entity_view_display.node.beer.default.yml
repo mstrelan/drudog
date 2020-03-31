@@ -9,20 +9,26 @@ dependencies:
     - field.field.node.beer.field_brewers_tips
     - field.field.node.beer.field_description
     - field.field.node.beer.field_ebc
+    - field.field.node.beer.field_fermentation_temp
     - field.field.node.beer.field_first_brewed
     - field.field.node.beer.field_food_pairing
+    - field.field.node.beer.field_hops
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
     - field.field.node.beer.field_image_url
+    - field.field.node.beer.field_malt
+    - field.field.node.beer.field_mash_temp
     - field.field.node.beer.field_ph
     - field.field.node.beer.field_srm
     - field.field.node.beer.field_tagline
     - field.field.node.beer.field_target_fg
     - field.field.node.beer.field_target_og
     - field.field.node.beer.field_volume
+    - field.field.node.beer.field_yeast
     - node.type.beer
   module:
     - datetime
+    - entity_reference_revisions
     - link
     - physical
     - user
@@ -85,6 +91,13 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
+  field_fermentation_temp:
+    weight: 22
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: physical_measurement_default
+    region: content
   field_first_brewed:
     weight: 3
     label: above
@@ -101,6 +114,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_hops:
+    type: entity_reference_revisions_entity_view
+    weight: 19
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_ibu:
     weight: 7
@@ -133,6 +155,24 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
+  field_malt:
+    type: entity_reference_revisions_entity_view
+    weight: 18
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_mash_temp:
+    type: entity_reference_revisions_entity_view
+    weight: 21
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_ph:
     weight: 12
@@ -192,6 +232,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: physical_measurement_default
+    region: content
+  field_yeast:
+    weight: 20
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 0
