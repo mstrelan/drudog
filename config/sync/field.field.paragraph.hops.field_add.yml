@@ -1,0 +1,19 @@
+uuid: 4711e1cd-2e7a-4e48-97ab-e876ef149b8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_add
+    - paragraphs.paragraphs_type.hops
+id: paragraph.hops.field_add
+field_name: field_add
+entity_type: paragraph
+bundle: hops
+label: Add
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

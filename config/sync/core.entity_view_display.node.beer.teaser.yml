@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.beer.field_ebc
     - field.field.node.beer.field_first_brewed
     - field.field.node.beer.field_food_pairing
+    - field.field.node.beer.field_hops
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
     - field.field.node.beer.field_image_url
@@ -44,6 +45,7 @@ hidden:
   field_ebc: true
   field_first_brewed: true
   field_food_pairing: true
+  field_hops: true
   field_ibu: true
   field_id: true
   field_image_url: true
