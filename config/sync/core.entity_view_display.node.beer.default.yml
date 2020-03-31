@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.beer.field_ebc
     - field.field.node.beer.field_first_brewed
     - field.field.node.beer.field_food_pairing
+    - field.field.node.beer.field_hops
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
     - field.field.node.beer.field_image_url
@@ -103,6 +104,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_hops:
+    type: entity_reference_revisions_entity_view
+    weight: 19
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_ibu:
     weight: 7

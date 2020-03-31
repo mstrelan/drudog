@@ -1,0 +1,49 @@
+uuid: 07ef9605-0649-4187-950a-a0407ad196d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hops.field_add
+    - field.field.paragraph.hops.field_amount
+    - field.field.paragraph.hops.field_attribute
+    - field.field.paragraph.hops.field_hops
+    - paragraphs.paragraphs_type.hops
+  module:
+    - physical
+id: paragraph.hops.default
+targetEntityType: paragraph
+bundle: hops
+mode: default
+content:
+  field_add:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_amount:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: physical_measurement_default
+    region: content
+  field_attribute:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hops:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.beer.field_ebc
     - field.field.node.beer.field_first_brewed
     - field.field.node.beer.field_food_pairing
+    - field.field.node.beer.field_hops
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
     - field.field.node.beer.field_image_url
@@ -62,7 +63,7 @@ content:
     type: physical_measurement_default
     region: content
   field_brewers_tips:
-    weight: 24
+    weight: 25
     settings:
       rows: 5
       placeholder: ''
@@ -91,12 +92,24 @@ content:
     type: datetime_default
     region: content
   field_food_pairing:
-    weight: 23
+    weight: 24
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_hops:
+    type: entity_reference_paragraphs
+    weight: 23
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_ibu:
     weight: 13

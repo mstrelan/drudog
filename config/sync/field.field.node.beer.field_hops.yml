@@ -1,0 +1,34 @@
+uuid: 7c9f782b-d8ed-4ced-ae74-ddc67fd2723d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hops
+    - node.type.beer
+    - paragraphs.paragraphs_type.hops
+  module:
+    - entity_reference_revisions
+id: node.beer.field_hops
+field_name: field_hops
+entity_type: node
+bundle: beer
+label: Hops
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hops: hops
+    target_bundles_drag_drop:
+      hops:
+        enabled: true
+        weight: 3
+      malt:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions
