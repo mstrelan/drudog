@@ -12,14 +12,16 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6",
         "drupal/console": "^1.0.2",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
-        "drupal/migrate_plus": "^4.2",
+        "drupal/migrate_plus": "4.x-dev",
         "drupal/migrate_tools": "^4.5",
         "drupal/paragraphs": "^1.11",
         "drupal/physical": "^1.1",
         "drush/drush": "^9.7.1 | ^10.0.0",
+        "flow/jsonpath": "^0.5.0",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
@@ -49,9 +51,15 @@
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
         },
+        "enable-patches": true,
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal/core": "-p2"
+        },
+        "patches": {
+            "drupal/migrate_plus": {
+                "Add XPath-style filtering ability in JSON data parser plugin": "https://www.drupal.org/files/issues/2020-04-01/migrate_plus-json-xpath-filtering-3007709-18.patch"
+            }
         }
     }
 }

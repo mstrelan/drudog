@@ -1,0 +1,70 @@
+id: punkapi_hops
+label: 'PunkAPI Hops'
+migration_group: punkapi
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: drudog_jsonpath
+  urls:
+    - 'https://api.punkapi.com/v2/beers?page=1&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=2&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=3&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=4&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=5&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=6&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=7&per_page=50'
+  item_selector: '$..ingredients.hops[*]'
+  fields:
+    -
+      name: beer_id
+      label: 'Beer ID'
+      selector: beer_id
+    -
+      name: delta
+      label: 'Delta'
+      selector: delta
+    -
+      name: hops
+      label: Hops
+      selector: name
+    -
+      name: amount_value
+      label: 'Amount (value)'
+      selector: amount.value
+    -
+      name: amount_unit
+      label: 'Amount (unit)'
+      selector: amount.unit
+    -
+      name: add
+      label: 'Add'
+      selector: add
+    -
+      name: attribute
+      label: 'Attribute'
+      selector: attribute
+  ids:
+    beer_id:
+      type: integer
+    delta:
+      type: integer
+process:
+  field_hops:
+    plugin: entity_generate
+    source: hops
+    value_key: name
+    bundle_key: vid
+    bundle: hops
+    entity_type: taxonomy_term
+  field_amount/number: amount_value
+  field_amount/unit:
+    plugin: str_replace
+    source: amount_unit
+    search: grams
+    replace: g
+  field_add: add
+  field_attribute: attribute
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: hops
+migration_dependencies: {  }

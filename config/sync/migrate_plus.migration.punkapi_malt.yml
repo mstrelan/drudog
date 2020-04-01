@@ -1,0 +1,60 @@
+id: punkapi_malt
+label: 'PunkAPI Malts'
+migration_group: punkapi
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: drudog_jsonpath
+  urls:
+    - 'https://api.punkapi.com/v2/beers?page=1&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=2&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=3&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=4&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=5&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=6&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=7&per_page=50'
+  item_selector: '$..ingredients.malt[*]'
+  fields:
+    -
+      name: beer_id
+      label: 'Beer ID'
+      selector: beer_id
+    -
+      name: delta
+      label: 'Delta'
+      selector: delta
+    -
+      name: malt
+      label: Malt
+      selector: name
+    -
+      name: amount_value
+      label: 'Amount (value)'
+      selector: amount.value
+    -
+      name: amount_unit
+      label: 'Amount (unit)'
+      selector: amount.unit
+  ids:
+    beer_id:
+      type: integer
+    delta:
+      type: integer
+process:
+  field_malt:
+    plugin: entity_generate
+    source: malt
+    value_key: name
+    bundle_key: vid
+    bundle: malt
+    entity_type: taxonomy_term
+  field_amount/number: amount_value
+  field_amount/unit:
+    plugin: str_replace
+    source: amount_unit
+    search: kilograms
+    replace: kg
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: malt
+migration_dependencies: {  }

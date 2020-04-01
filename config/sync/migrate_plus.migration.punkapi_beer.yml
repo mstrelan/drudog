@@ -4,7 +4,7 @@ migration_group: punkapi
 source:
   plugin: url
   data_fetcher_plugin: http
-  data_parser_plugin: json
+  data_parser_plugin: drudog_jsonpath
   urls:
     - 'https://api.punkapi.com/v2/beers?page=1&per_page=50'
     - 'https://api.punkapi.com/v2/beers?page=2&per_page=50'
@@ -14,9 +14,8 @@ source:
     - 'https://api.punkapi.com/v2/beers?page=6&per_page=50'
     # TODO: When setting the below to 25 per page the import stops at 300 not 325.
     - 'https://api.punkapi.com/v2/beers?page=7&per_page=50'
-  item_selector: NULL
+  item_selector: '$[*]'
   fields:
-    # TODO: Do we have to specify all of this if name matches selector?
     -
       name: id
       label: 'ID'
@@ -76,20 +75,43 @@ source:
     -
       name: volume_value
       label: 'Volume'
-      selector: 'volume/value'
+      selector: 'volume.value'
     -
       name: volume_unit
       label: 'Volume Unit'
-      selector: 'volume/unit'
+      selector: 'volume.unit'
     -
       name: boil_volume_value
       label: 'Boil Volume'
-      selector: 'boil_volume/value'
+      selector: 'boil_volume.value'
     -
       name: boil_volume_unit
       label: 'Boil Volume Unit'
-      selector: 'boil_volume/unit'
-    # TODO: Compound fields
+      selector: 'boil_volume.unit'
+    -
+      name: mash_temp
+      label: 'Mash Temp'
+      selector: 'method.mash_temp'
+    -
+      name: fermentation_temp_value
+      label: 'Fermentation Temp (Value)'
+      selector: 'method.fermentation.temp.value'
+    -
+      name: fermentation_temp_unit
+      label: 'Fermentation Temp (Unit)'
+      selector: 'method.fermentation.temp.unit'
+    -
+      name: malt
+      label: 'Malt'
+      selector: 'ingredients.malt'
+    -
+      name: hops
+      label: 'Hops'
+      selector: 'ingredients.hops'
+    -
+      name: yeast
+      label: 'Yeast'
+      selector: 'ingredients.yeast'
     -
       name: food_pairing
       label: 'Food Pairing'
@@ -134,7 +156,70 @@ process:
     source: boil_volume_unit
     search: litres
     replace: l
-  # TODO: Compound fields
+  field_mash_temp:
+    plugin: sub_process
+    source: mash_temp
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration: punkapi_mash_temp
+          source:
+            - beer_id
+            - delta
+          no_stub: true
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  'field_fermentation_temp/number': fermentation_temp_value
+  'field_fermentation_temp/unit':
+    plugin: str_replace
+    source: fermentation_temp_unit
+    search: celsius
+    replace: C
+  field_malt:
+    plugin: sub_process
+    source: malt
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration: punkapi_malt
+          source:
+            - beer_id
+            - delta
+          no_stub: true
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  field_hops:
+    plugin: sub_process
+    source: hops
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration: punkapi_hops
+          source:
+            - beer_id
+            - delta
+          no_stub: true
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  field_yeast:
+    plugin: entity_generate
+    source: yeast
+    value_key: name
+    bundle_key: vid
+    bundle: yeast
+    entity_type: taxonomy_term
   field_food_pairing: food_pairing
   field_brewers_tips: brewers_tips
   sticky:

@@ -1,0 +1,54 @@
+id: punkapi_mash_temp
+label: 'PunkAPI Mash Temp'
+migration_group: punkapi
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: drudog_jsonpath
+  urls:
+    - 'https://api.punkapi.com/v2/beers?page=1&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=2&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=3&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=4&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=5&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=6&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=7&per_page=50'
+  item_selector: '$..method.mash_temp[*]'
+  fields:
+    -
+      name: beer_id
+      label: 'Beer ID'
+      selector: beer_id
+    -
+      name: delta
+      label: 'Delta'
+      selector: delta
+    -
+      name: temp_value
+      label: Temp (value)
+      selector: temp.value
+    -
+      name: temp_unit
+      label: Temp (unit)
+      selector: temp.unit
+    -
+      name: duration
+      label: 'Duration'
+      selector: duration
+  ids:
+    beer_id:
+      type: integer
+    delta:
+      type: integer
+process:
+  field_temp/number: temp_value
+  field_temp/unit:
+    plugin: str_replace
+    source: temp_unit
+    search: celsius
+    replace: C
+  field_duration: duration
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: mash_temp
+migration_dependencies: {  }
