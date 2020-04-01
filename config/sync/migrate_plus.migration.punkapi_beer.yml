@@ -59,7 +59,7 @@ source:
     -
       name: ebc
       label: 'EBC'
-      selector: ebv
+      selector: ebc
     -
       name: srm
       label: 'SRM'
@@ -139,8 +139,7 @@ process:
   field_ibu: ibu
   field_target_fg: target_fg
   field_target_og: target_og
-  # TODO: Debug why this is empty
-  # field_ebc: ebc
+  field_ebc: ebc
   field_srm: srm
   field_ph: ph
   field_attenuation_level: attenuation_level
