@@ -3,16 +3,26 @@ label: 'PunkAPI Malts'
 migration_group: punkapi
 source:
   plugin: url
-  data_fetcher_plugin: file
-  data_parser_plugin: xml
+  data_fetcher_plugin: http
+  data_parser_plugin: drudog_jsonpath
   urls:
-    - '../punkapi.xml'
-  item_selector: /root/row/ingredients/malt
+    - 'https://api.punkapi.com/v2/beers?page=1&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=2&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=3&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=4&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=5&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=6&per_page=50'
+    - 'https://api.punkapi.com/v2/beers?page=7&per_page=50'
+  item_selector: '$..ingredients.malt[*]'
   fields:
     -
       name: beer_id
       label: 'Beer ID'
-      selector: ../../id
+      selector: beer_id
+    -
+      name: delta
+      label: 'Delta'
+      selector: delta
     -
       name: malt
       label: Malt
@@ -20,16 +30,16 @@ source:
     -
       name: amount_value
       label: 'Amount (value)'
-      selector: amount/value
+      selector: amount.value
     -
       name: amount_unit
       label: 'Amount (unit)'
-      selector: amount/unit
+      selector: amount.unit
   ids:
     beer_id:
       type: integer
-    malt:
-      type: string
+    delta:
+      type: integer
 process:
   field_malt:
     plugin: entity_generate
