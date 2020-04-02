@@ -5,17 +5,15 @@
  */
 
 $databases['default']['default'] = [
-  'database' => 'drupal8',
-  'username' => 'root',
-  'password' => 'root',
+  'database' => 'drupal',
+  'username' => 'drupal',
+  'password' => 'drupal',
   'prefix' => '',
-  'host' => 'mariadb',
+  'host' => 'mysql',
   'port' => '',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 ];
-
-$settings['hash_salt'] = 'foo';
 
 // Display errors.
 $config['system.logging']['error_level'] = 'verbose';

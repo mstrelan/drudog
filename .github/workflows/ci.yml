@@ -7,10 +7,15 @@ jobs:
       image: juampynr/drupal8ci:latest
 
     services:
-      mariadb:
-        image: quay.io/juampynr/drupal8-github-actions:latest
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
         ports:
-          - 33306:3306
+          - "33306:3306"
 
     steps:
       - uses: actions/checkout@v1
@@ -47,10 +52,15 @@ jobs:
 #      image: juampynr/drupal8ci:latest
 #
 #    services:
-#      mariadb:
-#        image: quay.io/juampynr/drupal8-github-actions:latest
+#      mysql:
+#        image: mysql:5.7
+#        environment:
+#          MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+#          MYSQL_DATABASE: drupal
+#          MYSQL_USER: drupal
+#          MYSQL_PASSWORD: drupal
 #        ports:
-#          - 33306:3306
+#          - "33306:3306"
 #
 #    steps:
 #      - uses: actions/checkout@v1
@@ -77,10 +87,15 @@ jobs:
       image: juampynr/drupal8ci:latest
 
     services:
-      mariadb:
-        image: quay.io/juampynr/drupal8-github-actions:latest
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
         ports:
-          - 33306:3306
+          - "33306:3306"
 
     steps:
       - uses: actions/checkout@v1
