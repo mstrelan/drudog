@@ -15,7 +15,7 @@ $databases['default']['default'] = [
   'driver' => 'mysql',
 ];
 
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'foo';
 
 // Display errors.
 $config['system.logging']['error_level'] = 'verbose';
