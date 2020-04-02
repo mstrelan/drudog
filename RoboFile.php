@@ -60,6 +60,18 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
+   * Command to install from config.
+   *
+   * @return \Robo\Result
+   *   The result tof the collection of tasks.
+   */
+  public function jobInstallFromConfig() {
+    $collection = $this->collectionBuilder();
+    $collection->addTaskList($this->runInstallFromConfig());
+    return $collection->run();
+  }
+
+  /**
    * Command to run existing site tests.
    *
    * @return \Robo\Result
@@ -141,6 +153,20 @@ class RoboFile extends \Robo\Tasks {
     $tasks[] = $this->taskExecStack()
       ->exec('vendor/bin/phpcs --standard=Drupal web/modules/custom')
       ->exec('vendor/bin/phpcs --standard=DrupalPractice web/modules/custom');
+    return $tasks;
+  }
+
+  /**
+   * Installs site from config.
+   *
+   * @return \Robo\Task\Base\Exec[]
+   *   An array of tasks.
+   */
+  protected function runInstallFromConfig() {
+    $tasks = [];
+    $tasks[] = $this->taskExec('sed -ri -e \'s!/var/www/html/web!' . getenv('GITHUB_WORKSPACE') . '/web!g\' /etc/apache2/sites-available/*.conf /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf');
+    $tasks[] = $this->taskExec('service apache2 start');
+    $tasks[] = $this->taskExec('vendor/bin/drush site-install -y --config-dir=config/sync minimal');
     return $tasks;
   }
 
