@@ -168,7 +168,8 @@ class RoboFile extends \Robo\Tasks {
     $tasks[] = $this->taskExec('service apache2 start');
     $tasks[] = $this->drush()
       ->args(['site-install', 'minimal'])
-      ->option('yes')
+      ->option('existing-config')
+      ->option('no-interaction')
       ->option('verbose');
     return $tasks;
   }
