@@ -34,4 +34,5 @@ class ExistingSiteTest extends ExistingSiteWebDriverTestBase {
     $web_assert->pageTextNotContains('Hops');
     $web_assert->pageTextNotContains('Yeast');
   }
+
 }
