@@ -57,8 +57,8 @@ class DrudogJsonPath extends JsonPath {
    * @param array $source_data
    *   The associative array of source data.
    */
-  private function alterSourceData(&$source_data) {
-    foreach ($source_data as $key => $data) {
+  private function alterSourceData(array &$source_data) {
+    foreach ($source_data as $data) {
       if (isset($data->id)) {
         // Gather all the compound fields we need to alter.
         $fields = [
