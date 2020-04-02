@@ -742,6 +742,11 @@ $settings['entity_update_batch_size'] = 50;
 $settings['entity_update_backup'] = TRUE;
 
 /**
+ * Config sync directory.
+ */
+$settings['config_sync_directory'] = '../config/sync';
+
+/**
  * Load local development override configuration, if available.
  *
  * Use settings.local.php to override variables on secondary (staging,
