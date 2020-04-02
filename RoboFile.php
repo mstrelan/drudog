@@ -111,7 +111,7 @@ class RoboFile extends \Robo\Tasks {
   protected function runUnitTests() {
     $tasks = [];
     $tasks[] = $this->taskExecStack()
-      ->exec('vendor/bin/phpunit --debug --verbose --testsuite=unit,kernel --log-junit=junit.xml');
+      ->exec('vendor/bin/phpunit --debug --verbose --testsuite=unit,kernel');
     return $tasks;
   }
 
@@ -138,11 +138,9 @@ class RoboFile extends \Robo\Tasks {
     $tasks = [];
     $tasks[] = $this->taskExecStack()
       ->exec('vendor/bin/phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer');
-    $tasks[] = $this->taskFilesystemStack()
-      ->mkdir('artifacts/phpcs');
     $tasks[] = $this->taskExecStack()
-      ->exec('vendor/bin/phpcs --standard=Drupal --report=junit --report-junit=artifacts/phpcs/phpcs.xml web/modules/custom')
-      ->exec('vendor/bin/phpcs --standard=DrupalPractice --report=junit --report-junit=artifacts/phpcs/phpcs.xml web/modules/custom');
+      ->exec('vendor/bin/phpcs --standard=Drupal web/modules/custom')
+      ->exec('vendor/bin/phpcs --standard=DrupalPractice web/modules/custom');
     return $tasks;
   }
 
