@@ -167,9 +167,8 @@ class RoboFile extends \Robo\Tasks {
     $tasks[] = $this->taskExec('sed -ri -e \'s!/var/www/html/web!' . getenv('GITHUB_WORKSPACE') . '/web!g\' /etc/apache2/sites-available/*.conf /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf');
     $tasks[] = $this->taskExec('service apache2 start');
     $tasks[] = $this->drush()
-      ->args('site-install')
+      ->args(['site-install', 'minimal'])
       ->option('yes')
-      ->option('minimal')
       ->option('verbose');
     return $tasks;
   }
