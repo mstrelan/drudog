@@ -1,13 +1,13 @@
 <?php
 
-namespace Drupal\Tests\demo_module\ExistingSiteJavascript;
+namespace Drupal\Tests\drudog\ExistingSiteJavascript;
 
 use weitzman\DrupalTestTraits\ExistingSiteWebDriverTestBase;
 
 /**
  * Sample class to test the existing site.
  *
- * @group demo_module
+ * @group drudog
  */
 class ExistingSiteTest extends ExistingSiteWebDriverTestBase {
 
@@ -17,7 +17,7 @@ class ExistingSiteTest extends ExistingSiteWebDriverTestBase {
   public function testNodeExists() {
     $this->visit('/node/1');
     $web_assert = $this->assertSession();
-    $web_assert->pageTextContains('Sample article');
+    $web_assert->pageTextContains('Buzz');
   }
 
 }

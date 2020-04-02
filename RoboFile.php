@@ -72,6 +72,18 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
+   * Command to migrate content.
+   *
+   * @return \Robo\Result
+   *   The result tof the collection of tasks.
+   */
+  public function jobMigrateContent() {
+    $collection = $this->collectionBuilder();
+    $collection->addTaskList($this->runMigrateContent());
+    return $collection->run();
+  }
+
+  /**
    * Command to run existing site tests.
    *
    * @return \Robo\Result
@@ -170,6 +182,22 @@ class RoboFile extends \Robo\Tasks {
       ->args(['site-install', 'minimal'])
       ->option('existing-config')
       ->option('no-interaction')
+      ->option('verbose');
+    return $tasks;
+  }
+
+  /**
+   * Migrates content.
+   *
+   * @return \Robo\Task\Base\Exec[]
+   *   An array of tasks.
+   */
+  protected function runMigrateContent() {
+    $tasks = [];
+    $tasks[] = $this->drush()
+      ->args(['migrate-import'])
+      ->option('all')
+      ->option('update')
       ->option('verbose');
     return $tasks;
   }
