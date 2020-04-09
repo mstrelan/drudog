@@ -84,6 +84,18 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
+   * Command to index search data.
+   *
+   * @return \Robo\Result
+   *   The result of the collection of tasks.
+   */
+  public function jobSearchIndex() {
+    $collection = $this->collectionBuilder();
+    $collection->addTaskList($this->runSearchIndex());
+    return $collection->run();
+  }
+
+  /**
    * Command to run existing site tests.
    *
    * @return \Robo\Result
@@ -201,6 +213,21 @@ class RoboFile extends \Robo\Tasks {
       ->option('verbose');
     return $tasks;
   }
+
+  /**
+   * Indexes search data.
+   *
+   * @return \Robo\Task\Base\Exec[]
+   *   An array of tasks.
+   */
+  protected function runSearchIndex() {
+    $tasks = [];
+    $tasks[] = $this->drush()
+      ->args(['search-api:index', 'beer'])
+      ->option('verbose');
+    return $tasks;
+  }
+
 
   /**
    * Runs existing site tests.
