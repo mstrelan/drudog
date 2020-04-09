@@ -62,3 +62,4 @@ hidden:
   field_target_og: true
   field_volume: true
   field_yeast: true
+  search_api_excerpt: true
