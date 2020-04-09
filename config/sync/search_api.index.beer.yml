@@ -1,0 +1,373 @@
+uuid: ed0c7729-882b-4002-b8f7-01606c17046d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_abv
+    - field.storage.node.field_brewers_tips
+    - field.storage.node.field_description
+    - field.storage.node.field_ebc
+    - field.storage.node.field_first_brewed
+    - field.storage.node.field_food_pairing
+    - field.storage.node.field_hops
+    - field.storage.paragraph.field_hops
+    - field.storage.node.field_ibu
+    - field.storage.node.field_id
+    - field.storage.node.field_malt
+    - field.storage.paragraph.field_malt
+    - field.storage.node.field_srm
+    - field.storage.node.field_tagline
+    - field.storage.node.field_target_fg
+    - field.storage.node.field_target_og
+    - field.storage.node.field_yeast
+    - search_api.server.drudog_database
+  module:
+    - paragraphs
+    - taxonomy
+    - node
+    - search_api
+id: beer
+name: Beer
+description: ''
+read_only: false
+field_settings:
+  field_abv:
+    label: ABV
+    datasource_id: 'entity:node'
+    property_path: field_abv
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_abv
+  field_brewers_tips:
+    label: 'Brewer''s tips'
+    datasource_id: 'entity:node'
+    property_path: field_brewers_tips
+    type: text
+    boost: 0.5
+    dependencies:
+      config:
+        - field.storage.node.field_brewers_tips
+  field_description:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: field_description
+    type: text
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.node.field_description
+  field_ebc:
+    label: EBC
+    datasource_id: 'entity:node'
+    property_path: field_ebc
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_ebc
+  field_first_brewed:
+    label: 'First brewed'
+    datasource_id: 'entity:node'
+    property_path: field_first_brewed
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_first_brewed
+  field_food_pairing:
+    label: 'Food pairing'
+    datasource_id: 'entity:node'
+    property_path: field_food_pairing
+    type: text
+    boost: 0.3
+    dependencies:
+      config:
+        - field.storage.node.field_food_pairing
+  field_ibu:
+    label: IBU
+    datasource_id: 'entity:node'
+    property_path: field_ibu
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_ibu
+  field_id:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: field_id
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_id
+  field_srm:
+    label: SRM
+    datasource_id: 'entity:node'
+    property_path: field_srm
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_srm
+  field_tagline:
+    label: Tagline
+    datasource_id: 'entity:node'
+    property_path: field_tagline
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.field_tagline
+  field_target_fg:
+    label: 'Target FG'
+    datasource_id: 'entity:node'
+    property_path: field_target_fg
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_target_fg
+  field_target_og:
+    label: 'Target OG'
+    datasource_id: 'entity:node'
+    property_path: field_target_og
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_target_og
+  name:
+    label: 'Hops » Paragraph » Hops » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_hops:entity:field_hops:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_hops
+        - field.storage.paragraph.field_hops
+      module:
+        - paragraphs
+        - taxonomy
+        - taxonomy
+  name_1:
+    label: 'Malt » Paragraph » Malt » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_malt:entity:field_malt:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_malt
+        - field.storage.paragraph.field_malt
+      module:
+        - paragraphs
+        - taxonomy
+        - taxonomy
+  name_2:
+    label: 'Yeast » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_yeast:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_yeast
+      module:
+        - taxonomy
+        - taxonomy
+  tid:
+    label: 'Hops » Paragraph » Hops » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_hops:entity:field_hops:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_hops
+        - field.storage.paragraph.field_hops
+      module:
+        - paragraphs
+        - taxonomy
+        - taxonomy
+  tid_1:
+    label: 'Malt » Paragraph » Malt » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_malt:entity:field_malt:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_malt
+        - field.storage.paragraph.field_malt
+      module:
+        - paragraphs
+        - taxonomy
+        - taxonomy
+  tid_2:
+    label: 'Yeast » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_yeast:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_yeast
+      module:
+        - taxonomy
+        - taxonomy
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 8
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - beer
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  ignore_character:
+    all_fields: true
+    fields:
+      - field_brewers_tips
+      - field_description
+      - field_food_pairing
+      - field_tagline
+      - name
+      - name_1
+      - name_2
+      - title
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  ignorecase:
+    all_fields: true
+    fields:
+      - field_brewers_tips
+      - field_description
+      - field_food_pairing
+      - field_tagline
+      - name
+      - name_1
+      - name_2
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  language_with_fallback: {  }
+  rendered_item: {  }
+  stemmer:
+    all_fields: true
+    fields:
+      - field_brewers_tips
+      - field_description
+      - field_food_pairing
+      - field_tagline
+      - name
+      - name_1
+      - name_2
+      - title
+    exceptions:
+      mexican: mexic
+      texan: texa
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+  stopwords:
+    all_fields: true
+    fields:
+      - field_brewers_tips
+      - field_description
+      - field_food_pairing
+      - field_tagline
+      - name
+      - name_1
+      - name_2
+      - title
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
+  tokenizer:
+    all_fields: true
+    fields:
+      - field_brewers_tips
+      - field_description
+      - field_food_pairing
+      - field_tagline
+      - name
+      - name_1
+      - name_2
+      - title
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  transliteration:
+    all_fields: true
+    fields:
+      - field_brewers_tips
+      - field_description
+      - field_food_pairing
+      - field_tagline
+      - name
+      - name_1
+      - name_2
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: drudog_database

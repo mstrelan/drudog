@@ -1,0 +1,17 @@
+uuid: efcf4cd7-a6b2-4849-8d84-9fe15d6152c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: drudog_database
+name: 'Drudog database'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 2
+  matching: words
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true
