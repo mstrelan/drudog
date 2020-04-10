@@ -114,6 +114,10 @@ jobs:
         run: |
           vendor/bin/robo job:migrate-content
 
+      - name: Search index
+        run: |
+          vendor/bin/robo job:search-index
+
       - name: Run existing site tests
         run: |
           vendor/bin/robo run:chrome-headless &

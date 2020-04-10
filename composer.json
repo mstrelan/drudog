@@ -4,23 +4,31 @@
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/mstrelan/drudog",
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "asset": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
-    ],
+    },
     "require": {
+        "bower-asset/jquery-ui-slider-pips": "^1.11",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6",
         "drupal/console": "^1.0.2",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
+        "drupal/facets": "^1.4",
         "drupal/migrate_plus": "4.x-dev",
         "drupal/migrate_tools": "^4.5",
         "drupal/paragraphs": "^1.11",
         "drupal/physical": "^1.1",
+        "drupal/search_api": "^1.15",
         "flow/jsonpath": "^0.5.0",
+        "oomphinc/composer-installers-extender": "^1.1",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
@@ -47,7 +55,10 @@
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": [
+              "type:drupal-library",
+              "vendor:bower-asset"
+            ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
@@ -55,6 +66,7 @@
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
         },
+        "installer-types": ["npm-asset", "bower-asset"],
         "enable-patches": true,
         "composer-exit-on-patch-failure": true,
         "patchLevel": {

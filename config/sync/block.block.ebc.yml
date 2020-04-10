@@ -1,0 +1,23 @@
+uuid: 61baa146-561e-4a55-a89b-80f6d51e8b9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.ebc
+  module:
+    - facets
+  theme:
+    - bartik
+id: ebc
+theme: bartik
+region: sidebar_first
+weight: -3
+provider: null
+plugin: 'facet_block:ebc'
+settings:
+  id: 'facet_block:ebc'
+  label: 'Colour (EBC)'
+  provider: facets
+  label_display: visible
+  block_id: ebc
+visibility: {  }

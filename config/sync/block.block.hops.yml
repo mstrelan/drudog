@@ -1,0 +1,23 @@
+uuid: c0d0b86b-42b1-4d1b-9e4f-3e0b4122e39d
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.hops
+  module:
+    - facets
+  theme:
+    - bartik
+id: hops
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:hops'
+settings:
+  id: 'facet_block:hops'
+  label: Hops
+  provider: facets
+  label_display: visible
+  block_id: hops
+visibility: {  }
