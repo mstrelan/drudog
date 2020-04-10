@@ -1,0 +1,23 @@
+uuid: ff8b7dc9-c44f-451a-acb4-9da5dfcdffd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.malt
+  module:
+    - facets
+  theme:
+    - bartik
+id: malt
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:malt'
+settings:
+  id: 'facet_block:malt'
+  label: Malt
+  provider: facets
+  label_display: visible
+  block_id: malt
+visibility: {  }

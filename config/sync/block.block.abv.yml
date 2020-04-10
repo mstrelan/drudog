@@ -1,0 +1,23 @@
+uuid: 567adfe8-bff9-47d5-8e3c-01a13e1a320a
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.abv
+  module:
+    - facets
+  theme:
+    - bartik
+id: abv
+theme: bartik
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'facet_block:abv'
+settings:
+  id: 'facet_block:abv'
+  label: 'Alcohol (ABV)'
+  provider: facets
+  label_display: visible
+  block_id: abv
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: 0b62d6d8-ef0e-4533-93ab-aff1a92f857b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.yeast
+  module:
+    - facets
+  theme:
+    - bartik
+id: yeast
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:yeast'
+settings:
+  id: 'facet_block:yeast'
+  label: Yeast
+  provider: facets
+  label_display: visible
+  block_id: yeast
+visibility: {  }

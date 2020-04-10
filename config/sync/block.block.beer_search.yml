@@ -1,0 +1,29 @@
+uuid: ddf4f301-33cf-48ec-8d27-fff223ae96a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.beer
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: beer_search
+theme: bartik
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'views_exposed_filter_block:beer-page'
+settings:
+  id: 'views_exposed_filter_block:beer-page'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: Search
+visibility:
+  request_path:
+    id: request_path
+    pages: /beer
+    negate: false
+    context_mapping: {  }

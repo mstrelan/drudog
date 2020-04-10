@@ -1,0 +1,23 @@
+uuid: 60de4af0-6cae-434f-8ed6-5d37968b35d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.ibu
+  module:
+    - facets
+  theme:
+    - bartik
+id: ibu
+theme: bartik
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'facet_block:ibu'
+settings:
+  id: 'facet_block:ibu'
+  label: 'Bitterness (IBU)'
+  provider: facets
+  label_display: visible
+  block_id: ibu
+visibility: {  }
