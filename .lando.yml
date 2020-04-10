@@ -2,3 +2,7 @@ name: drudog
 recipe: drupal8
 config:
   webroot: web
+tooling:
+  robo:
+    service: appserver
+    command: /app/vendor/bin/robo
