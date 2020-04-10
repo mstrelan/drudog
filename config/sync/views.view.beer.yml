@@ -7,7 +7,6 @@ dependencies:
     - field.storage.node.field_ibu
     - field.storage.node.field_id
     - search_api.index.beer
-    - system.menu.main
   module:
     - search_api
 id: beer
@@ -533,9 +532,19 @@ display:
       display_extenders: {  }
       path: beer
       menu:
-        type: normal
+        type: none
         title: Beer
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
         menu_name: main
+      cache:
+        type: none
+      defaults:
+        cache: false
+      exposed_block: true
     cache_metadata:
       max-age: -1
       contexts:
