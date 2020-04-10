@@ -213,12 +213,22 @@ process:
             - 0
       target_revision_id: '@target_id'
   field_yeast:
-    plugin: entity_generate
-    source: yeast
-    value_key: name
-    bundle_key: vid
-    bundle: yeast
-    entity_type: taxonomy_term
+    -
+      plugin: skip_on_empty
+      source: yeast
+      method: process
+    -
+      plugin: explode
+      delimiter: '&'
+    -
+      plugin: callback
+      callable: trim
+    -
+      plugin: entity_generate
+      value_key: name
+      bundle_key: vid
+      bundle: yeast
+      entity_type: taxonomy_term
   field_food_pairing: food_pairing
   field_brewers_tips: brewers_tips
   sticky:

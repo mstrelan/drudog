@@ -35,4 +35,14 @@ class ExistingSiteTest extends ExistingSiteWebDriverTestBase {
     $web_assert->pageTextNotContains('Yeast');
   }
 
+  /**
+   * Checks that beers with multiple yeasts import correctly.
+   */
+  public function testMultipleYeasts() {
+    $this->visit('/node/97');
+    $web_assert = $this->assertSession();
+    $web_assert->pageTextContains('Wyeast 1056');
+    $web_assert->pageTextContains('Wyeast 1272');
+  }
+
 }
