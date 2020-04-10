@@ -1,6 +1,7 @@
 name: drudog
 recipe: drupal8
 config:
+  php: 7.4
   webroot: web
 tooling:
   robo:
