@@ -82,6 +82,30 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_food_pairing
+  field_hops:
+    label: 'Hops » Paragraph » Hops'
+    datasource_id: 'entity:node'
+    property_path: 'field_hops:entity:field_hops'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_hops
+        - field.storage.paragraph.field_hops
+      module:
+        - paragraphs
+  field_hops_name:
+    label: 'Hops » Paragraph » Hops » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_hops:entity:field_hops:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_hops
+        - field.storage.paragraph.field_hops
+      module:
+        - paragraphs
+        - taxonomy
+        - taxonomy
   field_ibu:
     label: IBU
     datasource_id: 'entity:node'
@@ -98,6 +122,30 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_id
+  field_malt:
+    label: 'Malt » Paragraph » Malt'
+    datasource_id: 'entity:node'
+    property_path: 'field_malt:entity:field_malt'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_malt
+        - field.storage.paragraph.field_malt
+      module:
+        - paragraphs
+  field_malt_name:
+    label: 'Malt » Paragraph » Malt » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_malt:entity:field_malt:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_malt
+        - field.storage.paragraph.field_malt
+      module:
+        - paragraphs
+        - taxonomy
+        - taxonomy
   field_srm:
     label: SRM
     datasource_id: 'entity:node'
@@ -131,74 +179,19 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_target_og
-  name:
-    label: 'Hops » Paragraph » Hops » Taxonomy term » Name'
+  field_yeast:
+    label: Yeast
     datasource_id: 'entity:node'
-    property_path: 'field_hops:entity:field_hops:entity:name'
-    type: text
+    property_path: field_yeast
+    type: integer
     dependencies:
       config:
-        - field.storage.node.field_hops
-        - field.storage.paragraph.field_hops
-      module:
-        - paragraphs
-        - taxonomy
-        - taxonomy
-  name_1:
-    label: 'Malt » Paragraph » Malt » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_malt:entity:field_malt:entity:name'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_malt
-        - field.storage.paragraph.field_malt
-      module:
-        - paragraphs
-        - taxonomy
-        - taxonomy
-  name_2:
+        - field.storage.node.field_yeast
+  field_yeast_name:
     label: 'Yeast » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_yeast:entity:name'
     type: text
-    dependencies:
-      config:
-        - field.storage.node.field_yeast
-      module:
-        - taxonomy
-        - taxonomy
-  tid:
-    label: 'Hops » Paragraph » Hops » Taxonomy term » Term ID'
-    datasource_id: 'entity:node'
-    property_path: 'field_hops:entity:field_hops:entity:tid'
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_hops
-        - field.storage.paragraph.field_hops
-      module:
-        - paragraphs
-        - taxonomy
-        - taxonomy
-  tid_1:
-    label: 'Malt » Paragraph » Malt » Taxonomy term » Term ID'
-    datasource_id: 'entity:node'
-    property_path: 'field_malt:entity:field_malt:entity:tid'
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_malt
-        - field.storage.paragraph.field_malt
-      module:
-        - paragraphs
-        - taxonomy
-        - taxonomy
-  tid_2:
-    label: 'Yeast » Taxonomy term » Term ID'
-    datasource_id: 'entity:node'
-    property_path: 'field_yeast:entity:tid'
-    type: integer
     dependencies:
       config:
         - field.storage.node.field_yeast
@@ -233,10 +226,10 @@ processor_settings:
       - field_brewers_tips
       - field_description
       - field_food_pairing
+      - field_hops_name
+      - field_malt_name
       - field_tagline
-      - name
-      - name_1
-      - name_2
+      - field_yeast_name
       - title
     ignorable: '[''¿¡!?,.:;]'
     ignorable_classes:
@@ -256,10 +249,10 @@ processor_settings:
       - field_brewers_tips
       - field_description
       - field_food_pairing
+      - field_hops_name
+      - field_malt_name
       - field_tagline
-      - name
-      - name_1
-      - name_2
+      - field_yeast_name
       - title
     weights:
       preprocess_index: -20
@@ -272,10 +265,10 @@ processor_settings:
       - field_brewers_tips
       - field_description
       - field_food_pairing
+      - field_hops_name
+      - field_malt_name
       - field_tagline
-      - name
-      - name_1
-      - name_2
+      - field_yeast_name
       - title
     exceptions:
       mexican: mexic
@@ -289,10 +282,10 @@ processor_settings:
       - field_brewers_tips
       - field_description
       - field_food_pairing
+      - field_hops_name
+      - field_malt_name
       - field_tagline
-      - name
-      - name_1
-      - name_2
+      - field_yeast_name
       - title
     stopwords:
       - a
@@ -339,10 +332,10 @@ processor_settings:
       - field_brewers_tips
       - field_description
       - field_food_pairing
+      - field_hops_name
+      - field_malt_name
       - field_tagline
-      - name
-      - name_1
-      - name_2
+      - field_yeast_name
       - title
     spaces: ''
     overlap_cjk: 1
@@ -351,15 +344,15 @@ processor_settings:
       preprocess_index: -6
       preprocess_query: -6
   transliteration:
-    all_fields: true
+    all_fields: false
     fields:
       - field_brewers_tips
       - field_description
       - field_food_pairing
+      - field_hops_name
+      - field_malt_name
       - field_tagline
-      - name
-      - name_1
-      - name_2
+      - field_yeast_name
       - title
     weights:
       preprocess_index: -20
