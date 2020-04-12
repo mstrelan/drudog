@@ -45,4 +45,50 @@ class ExistingSiteTest extends ExistingSiteWebDriverTestBase {
     $web_assert->pageTextContains('Wyeast 1272');
   }
 
+  /**
+   * Tests a search for "movember".
+   *
+   * The search should only return the Movember result and not another random
+   * beer such as "AB:12".
+   */
+  public function testSimpleFullTextSearch() {
+    $this->visit('/beer');
+    $this->submitForm([
+      'search' => 'movember',
+    ], 'Go');
+    $web_assert = $this->assertSession();
+    $web_assert->pageTextContains('Movember');
+    $web_assert->pageTextNotContains('AB:12');
+  }
+
+  /**
+   * Tests a search for "russian doll".
+   *
+   * The search should return four different Russian Doll beers and again, not
+   * another random beer such as "AB:12".
+   */
+  public function testFullTextSearchWithMultipleResults() {
+    $this->visit('/beer');
+    $this->submitForm([
+      'search' => 'russian doll',
+    ], 'Go');
+    $web_assert = $this->assertSession();
+    $web_assert->pageTextContains('Barley Wine - Russian Doll');
+    $web_assert->pageTextContains('Russian Doll – India Pale Ale');
+    $web_assert->pageTextContains('Pale - Russian Doll');
+    $web_assert->pageTextContains('Double IPA - Russian Doll');
+    $web_assert->pageTextNotContains('AB:12');
+  }
+
+  /**
+   * Tests a search for "paivi" transliterated from Päivi.
+   */
+  public function testFullTextSearchTransliteration() {
+    $this->visit('/beer');
+    $this->submitForm([
+      'search' => 'paivi',
+    ], 'Go');
+    $web_assert = $this->assertSession();
+    $web_assert->pageTextContains('Hello My Name Is Päivi');
+  }
 }
