@@ -23,7 +23,7 @@ widget:
     suffix: '%'
     min_type: fixed
     min_value: !!float 0
-    max_type: search_result
+    max_type: fixed
     max_value: !!float 10
     step: 0.5
 query_operator: and
@@ -40,6 +40,16 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  drudog_range_slider:
+    processor_id: drudog_range_slider
+    weights:
+      pre_query: 70
+    settings: {  }
+  loose_range_slider:
+    processor_id: loose_range_slider
+    weights:
+      pre_query: 70
+    settings: {  }
   range_slider:
     processor_id: range_slider
     weights:

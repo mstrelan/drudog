@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for drudog module.
+ */
+
+/**
+ * Implements hook_widget_plugin_info_alter().
+ */
+function drudog_widget_plugin_info_alter(&$definitions) {
+  if (isset($definitions['range_slider'])) {
+    $definitions['range_slider']['class'] = '\Drupal\drudog\Plugin\facets\widget\DrudogRangeSliderWidget';
+  }
+}

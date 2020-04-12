@@ -40,6 +40,11 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  loose_range_slider:
+    processor_id: loose_range_slider
+    weights:
+      pre_query: 70
+    settings: {  }
   range_slider:
     processor_id: range_slider
     weights:
