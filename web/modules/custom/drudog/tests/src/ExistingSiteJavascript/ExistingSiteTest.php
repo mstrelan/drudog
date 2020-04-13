@@ -91,4 +91,48 @@ class ExistingSiteTest extends ExistingSiteWebDriverTestBase {
     $web_assert = $this->assertSession();
     $web_assert->pageTextContains('Hello My Name Is Päivi');
   }
+
+  /**
+   * Tests a search within a specific range.
+   */
+  public function testAbvRangeFacet() {
+    $this->visit('/beer');
+    $this->submitForm([
+      'search' => 'punk',
+      'f' => [
+        'abv:(min:6,max:6.5)',
+      ],
+    ], 'Go');
+    $web_assert = $this->assertSession();
+    $web_assert->pageTextContains('Punk IPA 2007 - 2010');
+    $web_assert->pageTextNotContains('Punk IPA 2010 - Current');
+  }
+
+  /**
+   * Tests a search beyond a specific range.
+   *
+   * Setting the upper limit of the ABV range to 10 actually indicates it should
+   * include anything above 10. We first test that a 12.7% beer is excluded when
+   * limited to 9.5% then ensure it is included when the limit is 10+%.
+   */
+  public function testAbvLooseRangeFacet() {
+    $this->visit('/beer');
+    $this->submitForm([
+      'search' => 'black eyed',
+      'f' => [
+        'abv:(min:0,max:9.5)',
+      ],
+    ], 'Go');
+    $web_assert = $this->assertSession();
+    $web_assert->pageTextNotContains('Black Eyed King Imp - Vietnamese Coffee Edition');
+
+    $this->submitForm([
+      'search' => 'black eyed',
+      'f' => [
+        'abv:(min:0,max:10)',
+      ],
+    ], 'Go');
+    $web_assert->pageTextContains('Black Eyed King Imp - Vietnamese Coffee Edition');
+  }
+
 }
