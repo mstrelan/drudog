@@ -1,20 +1,28 @@
+uuid: 1bc1ffa9-5f4a-4e17-84fb-1ea7ec83ad05
+langcode: en
+status: true
+dependencies: {  }
 id: punkapi_beer
-label: PunkAPI Beers
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
 migration_group: punkapi
+label: 'PunkAPI Beers'
 source:
   item_selector: '$[*]'
   fields:
     -
       name: id
-      label: 'ID'
+      label: ID
       selector: id
     -
       name: name
-      label: 'Name'
+      label: Name
       selector: name
     -
       name: tagline
-      label: 'Tagline'
+      label: Tagline
       selector: tagline
     -
       name: first_brewed
@@ -22,7 +30,7 @@ source:
       selector: first_brewed
     -
       name: description
-      label: 'Description'
+      label: Description
       selector: description
     -
       name: image_url
@@ -30,11 +38,11 @@ source:
       selector: image_url
     -
       name: abv
-      label: 'ABV'
+      label: ABV
       selector: abv
     -
       name: ibu
-      label: 'IBU'
+      label: IBU
       selector: ibu
     -
       name: target_fg
@@ -46,15 +54,15 @@ source:
       selector: target_og
     -
       name: ebc
-      label: 'EBC'
+      label: EBC
       selector: ebc
     -
       name: srm
-      label: 'SRM'
+      label: SRM
       selector: srm
     -
       name: ph
-      label: 'pH'
+      label: pH
       selector: ph
     -
       name: attenuation_level
@@ -62,44 +70,44 @@ source:
       selector: attenuation_level
     -
       name: volume_value
-      label: 'Volume'
-      selector: 'volume.value'
+      label: Volume
+      selector: volume.value
     -
       name: volume_unit
       label: 'Volume Unit'
-      selector: 'volume.unit'
+      selector: volume.unit
     -
       name: boil_volume_value
       label: 'Boil Volume'
-      selector: 'boil_volume.value'
+      selector: boil_volume.value
     -
       name: boil_volume_unit
       label: 'Boil Volume Unit'
-      selector: 'boil_volume.unit'
+      selector: boil_volume.unit
     -
       name: mash_temp
       label: 'Mash Temp'
-      selector: 'method.mash_temp'
+      selector: method.mash_temp
     -
       name: fermentation_temp_value
       label: 'Fermentation Temp (Value)'
-      selector: 'method.fermentation.temp.value'
+      selector: method.fermentation.temp.value
     -
       name: fermentation_temp_unit
       label: 'Fermentation Temp (Unit)'
-      selector: 'method.fermentation.temp.unit'
+      selector: method.fermentation.temp.unit
     -
       name: malt
-      label: 'Malt'
-      selector: 'ingredients.malt'
+      label: Malt
+      selector: ingredients.malt
     -
       name: hops
-      label: 'Hops'
-      selector: 'ingredients.hops'
+      label: Hops
+      selector: ingredients.hops
     -
       name: yeast
-      label: 'Yeast'
-      selector: 'ingredients.yeast'
+      label: Yeast
+      selector: ingredients.yeast
     -
       name: food_pairing
       label: 'Food Pairing'
@@ -108,7 +116,6 @@ source:
       name: brewers_tips
       label: 'Brewers tips'
       selector: brewers_tips
-
   ids:
     id:
       type: integer
@@ -119,10 +126,8 @@ process:
   field_id: id
   title: name
   field_tagline: tagline
-  # TODO: Date parsing
-  # field_first_brewed: first_brewed
   field_description: description
-  'field_image_url/uri': image_url
+  field_image_url/uri: image_url
   field_abv: abv
   field_ibu: ibu
   field_target_fg: target_fg
@@ -131,14 +136,14 @@ process:
   field_srm: srm
   field_ph: ph
   field_attenuation_level: attenuation_level
-  'field_volume/number': volume_value
-  'field_volume/unit':
+  field_volume/number: volume_value
+  field_volume/unit:
     plugin: str_replace
     source: volume_unit
     search: litres
     replace: l
-  'field_boil_volume/number': boil_volume_value
-  'field_boil_volume/unit':
+  field_boil_volume/number: boil_volume_value
+  field_boil_volume/unit:
     plugin: str_replace
     source: boil_volume_unit
     search: litres
@@ -160,8 +165,8 @@ process:
           index:
             - 0
       target_revision_id: '@target_id'
-  'field_fermentation_temp/number': fermentation_temp_value
-  'field_fermentation_temp/unit':
+  field_fermentation_temp/number: fermentation_temp_value
+  field_fermentation_temp/unit:
     plugin: str_replace
     source: fermentation_temp_unit
     search: celsius
