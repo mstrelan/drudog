@@ -7,4 +7,16 @@ label: PunkAPI
 description: ''
 source_type: ''
 module: null
-shared_configuration: null
+shared_configuration:
+  source:
+    plugin: url
+    data_fetcher_plugin: http
+    data_parser_plugin: drudog_jsonpath
+    urls:
+      - 'https://api.punkapi.com/v2/beers?page=1&per_page=50'
+      - 'https://api.punkapi.com/v2/beers?page=2&per_page=50'
+      - 'https://api.punkapi.com/v2/beers?page=3&per_page=50'
+      - 'https://api.punkapi.com/v2/beers?page=4&per_page=50'
+      - 'https://api.punkapi.com/v2/beers?page=5&per_page=50'
+      - 'https://api.punkapi.com/v2/beers?page=6&per_page=50'
+      - 'https://api.punkapi.com/v2/beers?page=7&per_page=50'

@@ -2,18 +2,6 @@ id: punkapi_beer
 label: PunkAPI Beers
 migration_group: punkapi
 source:
-  plugin: url
-  data_fetcher_plugin: http
-  data_parser_plugin: drudog_jsonpath
-  urls:
-    - 'https://api.punkapi.com/v2/beers?page=1&per_page=50'
-    - 'https://api.punkapi.com/v2/beers?page=2&per_page=50'
-    - 'https://api.punkapi.com/v2/beers?page=3&per_page=50'
-    - 'https://api.punkapi.com/v2/beers?page=4&per_page=50'
-    - 'https://api.punkapi.com/v2/beers?page=5&per_page=50'
-    - 'https://api.punkapi.com/v2/beers?page=6&per_page=50'
-    # TODO: When setting the below to 25 per page the import stops at 300 not 325.
-    - 'https://api.punkapi.com/v2/beers?page=7&per_page=50'
   item_selector: '$[*]'
   fields:
     -
