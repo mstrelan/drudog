@@ -96,21 +96,9 @@ class ExistingSiteTest extends ExistingSiteWebDriverTestBase {
    * Tests a search within a specific range.
    */
   public function testAbvRangeFacet() {
-    $this->visit('/beer');
+    $this->visit('/beer?search=punk&f[0]=abv:(min:6,max:6.5)');
     $web_assert = $this->assertSession();
     $web_assert->statusCodeEquals(200);
-    
-    $page = $this->getCurrentPage();
-    $page->fillField('search', 'punk');
-    $submit_button = $page->findButton('Go');
-    $submit_button->press();
-    $web_assert->statusCodeEquals(200);
-    
-    $page = $this->getCurrentPage();
-    $result = $web_assert->waitForElementVisible('css', '[data-drupal-facet-id="abv"] .ui-slider-pip-6');
-    $this->assertNotNull($result);
-    $result->click();
-  
     $web_assert->pageTextContains('Punk IPA 2007 - 2010');
     $web_assert->pageTextNotContains('Punk IPA 2010 - Current');
   }
