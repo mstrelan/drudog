@@ -22,7 +22,7 @@
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/facets": "^1.4",
-        "drupal/migrate_plus": "4.x-dev",
+        "drupal/migrate_plus": "v4.2",
         "drupal/migrate_tools": "^4.5",
         "drupal/paragraphs": "^1.11",
         "drupal/physical": "^1.1",
