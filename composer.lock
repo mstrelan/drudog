@@ -127,7 +127,7 @@
             "version": "3.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "15bc73803f76bc53b654b9fdbbbc096f56d7c03d"
             },
             "dist": {
@@ -1512,7 +1512,7 @@
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "8.8.5",
+            "version": "8.8.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -1721,9 +1721,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.4",
                     "datestamp": "1556645881",
@@ -1849,9 +1846,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-4.x": "4.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-4.5",
                     "datestamp": "1574693285",
@@ -1928,9 +1922,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.11",
                     "datestamp": "1581850829",
@@ -2071,9 +2062,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.15",
                     "datestamp": "1573122785",
@@ -7003,22 +6991,22 @@
         },
         {
             "name": "drupal/core-dev",
-            "version": "8.8.5",
+            "version": "8.8.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-dev.git",
-                "reference": "2dffabdcee78b36d513978424ac220da1fe2e11f"
+                "reference": "edeec67c12be4b459d2873ac99044787b51ebe42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-dev/zipball/2dffabdcee78b36d513978424ac220da1fe2e11f",
-                "reference": "2dffabdcee78b36d513978424ac220da1fe2e11f",
+                "url": "https://api.github.com/repos/drupal/core-dev/zipball/edeec67c12be4b459d2873ac99044787b51ebe42",
+                "reference": "edeec67c12be4b459d2873ac99044787b51ebe42",
                 "shasum": ""
             },
             "require": {
-                "behat/mink": "1.8.0 | 1.7.1.1 | 1.7.x-dev",
+                "behat/mink": "^1.8",
                 "behat/mink-goutte-driver": "^1.2",
-                "behat/mink-selenium2-driver": "1.4.0 | 1.3.1.1 | 1.3.x-dev",
+                "behat/mink-selenium2-driver": "^1.4",
                 "composer/composer": "^1.9.1",
                 "drupal/coder": "^8.3.2",
                 "jcalderonzumba/gastonjs": "^1.0.2",
@@ -7044,7 +7032,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
-            "time": "2019-11-05T11:06:10+00:00"
+            "time": "2020-05-19T10:05:59+00:00"
         },
         {
             "name": "drush/drush",
@@ -9355,19 +9343,19 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/weitzman/drupal-test-traits.git",
-                "reference": "2c517dbbe5b5471d2ded7ea7017993af07d75602"
+                "reference": "5992285e54e98e22cf1071242dea3c1da81d2b78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/weitzman%2Fdrupal-test-traits/repository/archive.zip?sha=2c517dbbe5b5471d2ded7ea7017993af07d75602",
-                "reference": "2c517dbbe5b5471d2ded7ea7017993af07d75602",
+                "url": "https://gitlab.com/api/v4/projects/weitzman%2Fdrupal-test-traits/repository/archive.zip?sha=5992285e54e98e22cf1071242dea3c1da81d2b78",
+                "reference": "5992285e54e98e22cf1071242dea3c1da81d2b78",
                 "shasum": ""
             },
             "require": {
                 "behat/mink": "^1.8 | 1.7.1 | 1.7.x-dev",
                 "behat/mink-goutte-driver": "^1.2",
                 "php": ">=7.0.8",
-                "phpunit/phpunit": "^6.5 || ^7",
+                "phpunit/phpunit": ">=6.5",
                 "webflo/drupal-finder": "^1.1"
             },
             "require-dev": {
@@ -9376,6 +9364,7 @@
                 "dmore/chrome-mink-driver": "^2.6",
                 "drupal-composer/drupal-scaffold": "2.3.0",
                 "drupal/core": "^8.8@alpha",
+                "drupal/core-dev": "^8.8",
                 "drush/drush": "^9",
                 "jakub-onderka/php-parallel-lint": "^1.0",
                 "squizlabs/php_codesniffer": "^3.2",
@@ -9405,7 +9394,7 @@
                 }
             ],
             "description": "Traits for testing Drupal sites that have user content (versus unpopulated sites).",
-            "time": "2020-03-30T14:14:58+00:00"
+            "time": "2020-04-29T23:52:16+00:00"
         }
     ],
     "aliases": [],
