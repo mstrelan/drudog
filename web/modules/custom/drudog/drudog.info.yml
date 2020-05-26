@@ -2,6 +2,6 @@ type: module
 name: Drudog
 description: 'Migrate helpers and plugins for importing from PunkAPI.'
 package: Drudog
-core: 8.x
+core_version_requirement: ^8.8 || ^9
 dependencies:
   - migrate_plus:migrate_plus

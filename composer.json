@@ -16,17 +16,16 @@
     },
     "require": {
         "bower-asset/jquery-ui-slider-pips": "^1.11",
-        "composer/installers": "^1.2",
+        "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6",
-        "drupal/console": "^1.0.2",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-recommended": "^8.8",
+        "drupal/core-composer-scaffold": "^9.0",
+        "drupal/core-recommended": "^9.0",
         "drupal/facets": "^1.4",
-        "drupal/migrate_plus": "v4.2",
-        "drupal/migrate_tools": "^4.5",
-        "drupal/paragraphs": "^1.11",
+        "drupal/migrate_plus": "^5.1",
+        "drupal/migrate_tools": "^5.0",
+        "drupal/paragraphs": "^1.12",
         "drupal/physical": "^1.1",
-        "drupal/search_api": "^1.15",
+        "drupal/search_api": "^1.16",
         "flow/jsonpath": "^0.5.0",
         "oomphinc/composer-installers-extender": "^1.1",
         "zaporylie/composer-drupal-optimizations": "^1.0"
@@ -34,8 +33,8 @@
     "require-dev": {
         "consolidation/robo": "^2.0",
         "dmore/chrome-mink-driver": "^2.7",
-        "drupal/coder": "^8.2",
-        "drupal/core-dev": "^8.8.0",
+        "drupal/coder": "^8.3",
+        "drupal/core-dev": "^9.0",
         "drush/drush": "^10.2",
         "weitzman/drupal-test-traits": "dev-master"
     },
@@ -74,7 +73,7 @@
         },
         "patches": {
             "drupal/migrate_plus": {
-                "Add XPath-style filtering ability in JSON data parser plugin": "https://www.drupal.org/files/issues/2020-04-01/migrate_plus-json-xpath-filtering-3007709-18.patch"
+                "Add XPath-style filtering ability in JSON data parser plugin": "https://www.drupal.org/files/issues/2020-05-14/migrate_plus-json-xpath-filtering-3007709-20.patch"
             }
         }
     }
