@@ -244,6 +244,16 @@
                 "zend",
                 "zikula"
             ],
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-04-07T06:57:05+00:00"
         },
         {
@@ -1186,10 +1196,6 @@
                     "name": "Lucas Hedding",
                     "homepage": "https://www.drupal.org/u/heddn",
                     "role": "Maintainer"
-                },
-                {
-                    "name": "moshe weitzman",
-                    "homepage": "https://www.drupal.org/user/23"
                 }
             ],
             "description": "Tools to assist in developing and running migrations.",
@@ -1238,7 +1244,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.12",
-                    "datestamp": "1590066861",
+                    "datestamp": "1590140081",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1788,6 +1794,12 @@
                 "laminas",
                 "psr",
                 "psr-7"
+            ],
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
             ],
             "time": "2020-04-27T17:07:01+00:00"
         },
@@ -9310,9 +9322,6 @@
                     "web/core": [
                         "type:drupal-core"
                     ]
-                },
-                "patches_applied": {
-                    "PHPUnit 8 compatibility": "https://gitlab.com/mstrelan/drupal-test-traits/-/commit/a7beabd27ea57be35d4b5bf3470e93b67311b7ce.diff"
                 }
             },
             "autoload": {
