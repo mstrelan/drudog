@@ -74,9 +74,6 @@
         "patches": {
             "drupal/migrate_plus": {
                 "Add XPath-style filtering ability in JSON data parser plugin": "https://www.drupal.org/files/issues/2020-05-14/migrate_plus-json-xpath-filtering-3007709-20.patch"
-            },
-            "weitzman/drupal-test-traits": {
-                "PHPUnit 8 compatibility": "https://gitlab.com/weitzman/drupal-test-traits/uploads/5323b515c8d1dcb7239203f6c41f7e7d/issue-51-fix-for-php-unit-incompatibility.patch"
             }
         }
     }
