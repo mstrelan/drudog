@@ -63,7 +63,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -8653,12 +8653,12 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/weitzman/drupal-test-traits.git",
-                "reference": "5992285e54e98e22cf1071242dea3c1da81d2b78"
+                "reference": "2ad5d5034677f76debd1b02bdeda903edf4d6c42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/weitzman%2Fdrupal-test-traits/repository/archive.zip?sha=5992285e54e98e22cf1071242dea3c1da81d2b78",
-                "reference": "5992285e54e98e22cf1071242dea3c1da81d2b78",
+                "url": "https://gitlab.com/api/v4/projects/weitzman%2Fdrupal-test-traits/repository/archive.zip?sha=2ad5d5034677f76debd1b02bdeda903edf4d6c42",
+                "reference": "2ad5d5034677f76debd1b02bdeda903edf4d6c42",
                 "shasum": ""
             },
             "require": {
@@ -8704,7 +8704,7 @@
                 }
             ],
             "description": "Traits for testing Drupal sites that have user content (versus unpopulated sites).",
-            "time": "2020-04-29T23:52:16+00:00"
+            "time": "2020-06-19T01:48:45+00:00"
         }
     ],
     "aliases": [],
