@@ -47,6 +47,9 @@
     "config": {
         "sort-packages": true
     },
+    "autoload": {
+        "files": ["load.environment.php"]
+    },
     "extra": {
         "drupal-scaffold": {
             "locations": {
