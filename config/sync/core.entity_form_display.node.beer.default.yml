@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.beer.field_hops
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
+    - field.field.node.beer.field_image
     - field.field.node.beer.field_image_url
     - field.field.node.beer.field_malt
     - field.field.node.beer.field_mash_temp
@@ -25,9 +26,11 @@ dependencies:
     - field.field.node.beer.field_target_og
     - field.field.node.beer.field_volume
     - field.field.node.beer.field_yeast
+    - image.style.thumbnail
     - node.type.beer
   module:
     - datetime
+    - image
     - link
     - paragraphs
     - path
@@ -135,6 +138,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
+  field_image:
+    weight: 29
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
   field_image_url:
     weight: 11

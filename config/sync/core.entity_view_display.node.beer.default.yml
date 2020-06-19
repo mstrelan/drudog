@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.beer.field_hops
     - field.field.node.beer.field_ibu
     - field.field.node.beer.field_id
+    - field.field.node.beer.field_image
     - field.field.node.beer.field_image_url
     - field.field.node.beer.field_malt
     - field.field.node.beer.field_mash_temp
@@ -29,6 +30,7 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
+    - image
     - link
     - physical
     - user
@@ -143,6 +145,15 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
+  field_image:
+    weight: 23
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   field_image_url:
     weight: 5
