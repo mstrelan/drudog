@@ -128,6 +128,11 @@ process:
   field_tagline: tagline
   field_description: description
   field_image_url/uri: image_url
+  field_image/target_id:
+    plugin: migration_lookup
+    migration: punkapi_image
+    source: id
+  field_image/alt: name
   field_abv: abv
   field_ibu: ibu
   field_target_fg: target_fg
