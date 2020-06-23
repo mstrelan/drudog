@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "184231277634a886a2401dbd355bbbf4",
+    "content-hash": "8a4332ea2f7e9b3c6bcdb0de54221594",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9506,12 +9506,12 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/weitzman/drupal-test-traits.git",
-                "reference": "2ad5d5034677f76debd1b02bdeda903edf4d6c42"
+                "reference": "039104658adeb6a1691db788b53eb02b21a32487"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/weitzman%2Fdrupal-test-traits/repository/archive.zip?sha=2ad5d5034677f76debd1b02bdeda903edf4d6c42",
-                "reference": "2ad5d5034677f76debd1b02bdeda903edf4d6c42",
+                "url": "https://gitlab.com/api/v4/projects/weitzman%2Fdrupal-test-traits/repository/archive.zip?sha=039104658adeb6a1691db788b53eb02b21a32487",
+                "reference": "039104658adeb6a1691db788b53eb02b21a32487",
                 "shasum": ""
             },
             "require": {
@@ -9525,10 +9525,10 @@
                 "behat/mink-selenium2-driver": "1.4.0 | 1.3.1 | 1.3.x-dev",
                 "composer/installers": "^1.2",
                 "dmore/chrome-mink-driver": "^2.6",
-                "drupal-composer/drupal-scaffold": "2.3.0",
-                "drupal/core": "^8.8@alpha",
-                "drupal/core-dev": "^8.8",
-                "drush/drush": "^9",
+                "drupal/core-composer-scaffold": "^9",
+                "drupal/core-dev": "^9",
+                "drupal/core-recommended": "^9",
+                "drush/drush": "^10",
                 "jakub-onderka/php-parallel-lint": "^1.0",
                 "squizlabs/php_codesniffer": "^3.2",
                 "zaporylie/composer-drupal-optimizations": "^1.0"
@@ -9540,8 +9540,15 @@
                         "type:drupal-core"
                     ]
                 },
-                "patches_applied": {
-                    "PHPUnit 8 compatibility": "https://gitlab.com/mstrelan/drupal-test-traits/-/commit/a7beabd27ea57be35d4b5bf3470e93b67311b7ce.diff"
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "web/"
+                    },
+                    "file-mapping": {
+                        "[project-root]/.editorconfig": false,
+                        "[project-root]/.gitattributes": false,
+                        "[project-root]/.gitignore": false
+                    }
                 }
             },
             "autoload": {
@@ -9560,7 +9567,7 @@
                 }
             ],
             "description": "Traits for testing Drupal sites that have user content (versus unpopulated sites).",
-            "time": "2020-06-19T01:48:45+00:00"
+            "time": "2020-06-21T13:47:52+00:00"
         }
     ],
     "aliases": [],
